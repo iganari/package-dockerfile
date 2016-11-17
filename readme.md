@@ -5,6 +5,8 @@
 
 ### pullする側のrepo
 
++ composer.json
+
 ```
 {
   "name": "iganari/package",
