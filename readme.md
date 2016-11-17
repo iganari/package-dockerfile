@@ -1,4 +1,10 @@
 # how to use
 
-dockerfileの集合体
+### 基本的にはcomposerでpullされるもの。
 
+
+### pullする側のrepo
+
+```
+
+```
