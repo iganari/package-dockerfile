@@ -18,7 +18,10 @@ docker build --no-cache .
 # docker run --rm -i -t $(docker images -q | head -1) /bin/bash
 
 # ホストのディレクトリをマウントし、直前に作成したimageから立ち上げる
-BASEPATH=$(cd `dirname $0`; pwd)
-REPOPATH=$(cd ../../`dirname $0`; pwd)
-echo ${REPOPATH}
-docker run --rm -it -v ${REPOPATH}:/var/tmp/project $(docker images -q | head -1) /bin/bash
+# BASEPATH=$(cd `dirname $0`; pwd)
+# REPOPATH=$(cd ../../`dirname $0`; pwd)
+# echo ${REPOPATH}
+# docker run --rm -it -v ${REPOPATH}:/var/tmp/project $(docker images -q | head -1) /bin/bash
+
+docker tag $(docker images -q | head -1) centos-7
+sh ./docker-run.sh centos-7
