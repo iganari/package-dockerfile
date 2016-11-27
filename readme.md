@@ -33,3 +33,11 @@
   }
 }
 ```
+
+### docker hubにログインする方法
+
++ ※ docker pullするために必要
+
+```
+$ docker login --username="iganari" --password="igaguri7986"
+```
