@@ -39,5 +39,5 @@
 + ※ docker pullするために必要
 
 ```
-$ docker login --username="iganari" --password="igaguri7986"
+$ docker login --username="igaguri" --password="igaguri7986"
 ```
