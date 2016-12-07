@@ -18,7 +18,7 @@
         "name": "package-dockerfile",
         "version": "0.0",
         "source": {
-          "url": "ssh://git@bitbucket.org/iganari/package-dockerfile.git",
+          "url": "ssh://git@bitbucket.org:hejda/package-dockerfile.git",
           "type": "git",
           "reference": "master"
         }
