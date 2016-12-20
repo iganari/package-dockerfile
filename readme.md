@@ -2,7 +2,6 @@
 
 ### 基本的にはcomposerでpullされるもの。
 
-
 ### pullする側のrepo
 
 + composer.json
