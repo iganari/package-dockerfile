@@ -42,7 +42,7 @@
 + ※ docker pullするために必要
 
 ```
-$ docker login --username="igaguri" --password="igaguri7986"
+$ docker login --username="${user_name}" --password="${user_password}"
 ```
 
 ### 起動中のコンテナの中に入る(docker exec)
