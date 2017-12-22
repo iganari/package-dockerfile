@@ -1,44 +1,72 @@
-#!/bin/bash
+# centos-7
 
-set -x
+### 内容
 
-### 基本的なdockerのimageを作るだけに留める
+CentOS 7 ベースのDockerコンテナ
 
-# まずはきれいにする
-for i in `docker ps -a  | awk 'NR > 1 {print $1}'` ; do docker rm  -f ${i} ; done && docker ps -a
-for i in `docker images | awk 'NR > 1 {print $3}'` ; do docker rmi -f ${i} ; done && docker images
+### 新しく作る場合
 
-# (pullとか)キャッシュせず、新たにDockerfileから作成する
-docker build --no-cache .
+```
+$ sh docker-build-run.sh
+```
 
-# check docker imasge
-# docker images
+### docker hub
 
-# docker起動
-# --rm: コンテナからexitした後に自動でコンテナを削除してくれる
-# docker run --rm -i -t ubuntu /bin/bash
++ URL
 
-# 直前に作成したimageを立ち上げる(自動削除付き)
-# docker run --rm -i -t $(docker images -q | head -1) /bin/bash
+https://hub.docker.com/r/igaguri/base-centos-7/
 
-# ホストのディレクトリをマウントする
-BASEPATH=$(cd `dirname $0`; pwd)
-REPOPATH=$(cd ../../`dirname $0`; pwd)
-echo ${REPOPATH}
-# docker run --rm -it $(docker images -q | head -1)  /bin/bash
-docker run --rm -it -v ${REPOPATH}:/var/tmp/project $(docker images -q | head -1) /bin/bash
-# docker run --rm -it $(docker images -q | head -1) -v ${REPOPATH}:/var/tmp/ /bin/bash
++ Docker Pull Command
 
-# dockerをバックグランドで起動
-# docker run -d -it $(docker images -q | head -1)
+```
+$ docker pull igaguri/base-centos-7
+```
 
-# 起動しているコンテナに接続
-# docker attach $(docker ps | awk 'NR > 1 { print $1}')
+### git
 
-# 作成するイメージの名前
-IMAGE_NAME='joke-command'
-# コンテナからイメージを作る
-# docker commit $(docker ps | awk 'NR > 1 { print $1}') ${IMAGE_NAME}_$(date "+%Y-%m-%d-%H%M")
++ git 2.x
 
-docker images
-# echo "docker run --rm -i -t ${IMAGE_NAME} /usr/bin/cmatrix"
+```
+# git --version
+git version 2.15.0-rc1
+```
+
+### Python
+
++ Python 2.x
+
+```
+# python --version
+Python 2.7.5
+
+# pip --version
+pip 9.0.1 from /usr/lib/python2.7/site-packages (python 2.7)
+```
+
++ Python 3.x
+
+```
+# python3.5 --version
+Python 3.5.4
+
+# pip3.5 --version
+pip 9.0.1 from /usr/lib/python3.5/site-packages (python 3.5)
+```
+
++ 俯瞰
+
+```
+# ls -l /usr/bin/python*
+lrwxrwxrwx 1 root root /usr/bin/python -> python2
+lrwxrwxrwx 1 root root /usr/bin/python-config -> python2-config
+lrwxrwxrwx 1 root root /usr/bin/python2 -> python2.7
+lrwxrwxrwx 1 root root /usr/bin/python2-config -> python2.7-config
+-rwxr-xr-x 1 root root /usr/bin/python2.7
+-rwxr-xr-x 1 root root /usr/bin/python2.7-config
+-rwxr-xr-x 2 root root /usr/bin/python3.5
+lrwxrwxrwx 1 root root /usr/bin/python3.5-config -> /usr/bin/python3.5m-config
+-rwxr-xr-x 2 root root /usr/bin/python3.5m
+-rwxr-xr-x 1 root root /usr/bin/python3.5m-config
+-rwxr-xr-x 1 root root /usr/bin/python3.5m-x86_64-config
+```
+
