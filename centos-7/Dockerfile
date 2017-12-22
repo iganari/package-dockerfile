@@ -1,11 +1,54 @@
-FROM centos:7
+FROM centos:7.4.1708
 
-RUN rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
-RUN sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/epel.repo
+MAINTAINER iganari
 
-# RUN rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-RUN yum check-update --enablerepo=epel,remi
-# RUN yum check-update
-RUN yum clean all -y
+RUN yum install -y epel-release && \
+      rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm && \
+      sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/epel.repo
 
-RUN yum install -y ansible --enablerepo=epel
+### install package
+RUN yum clean all -y && \
+      yum install --enablerepo=epel,remi -y git \
+                                            gcc \
+                                            make \     
+                                            python-devel \
+                                            openssl-devel \
+                                            curl-devel \
+                                            expat-devel \
+                                            gettext-devel \ 
+                                            zlib-devel \
+                                            perl-ExtUtils-MakeMaker \
+                                            vim && \
+        yum install --enablerepo=epel,remi -y python-pip && \
+        rm -rf /var/cache/yum
+
+### setting Jp
+RUN rm -rfv /etc/localtime && \
+      ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+      echo 'LANG="ja_JP.utf8"' > /etc/locale.conf
+
+### install git 2
+RUN git clone git://git.kernel.org/pub/scm/git/git.git /usr/local/src/git && \
+      yum remove -y git && \
+      cd /usr/local/src/git && \
+      make prefix=/usr/local all && \
+      make prefix=/usr/local install && \
+      echo 'export PATH=$PATH:/usr/local/bin' >> /etc/profile
+
+### upgrade pip in Python 2.7
+RUN pip install --upgrade pip
+
+### install Python 3
+RUN rpm -ivh https://centos7.iuscommunity.org/ius-release.rpm && \
+      yum install -y python36u \
+                     python36u-libs \
+                     python36u-devel \
+                     python36u-pip
+RUN ln -s /usr/bin/python3.6 /usr/bin/python3 && \
+      ln -s /usr/bin/pip3.6    /usr/bin/pip3
+
+### set env
+ADD ./_bashrc /root/.bashrc
+ADD ./_vimrc  /root/.vimrc
+ADD ./_ssh    /root/.ssh
+RUN chmod 0700 -R /root/.ssh
