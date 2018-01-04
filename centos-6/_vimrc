@@ -1,0 +1,45 @@
+"--- 基本設定 ---
+set number                " 行番号を表示する
+set cursorline            " カーソル行の背景色を変える
+"set cursorcolumn          " カーソル位置のカラムの背景色を変える
+set laststatus=2          " ステータス行を常に表示
+set cmdheight=2           " メッセージ表示欄を2行確保
+
+
+"--- ファイル処理関連の設定 ---
+set autoread              "  
+set noswapfile            " sample.txt.swpのような、スワップファイルを作成しない  
+set nobackup              " sample.txt~のような、バックアップファイルを作成しない  
+
+"---  検索/置換の設定
+set hlsearch              " 検索文字列をハイライトする 
+set incsearch             " インクリメンタルサーチを行う
+set wrapscan              " 最後尾まで検索を終えたら次の検索で先頭に移る
+"set gdefault              " 置換の時 g オプションをデフォルトで有効にする
+set formatoptions-=ro     " 改行時に自動でコメントアウトが挿入されるのを防ぐ
+
+
+"--- タブ/インデントの設定 ---
+set expandtab             " タブ入力を複数の空白入力に置き換える
+set tabstop=2             " 画面上でタブ文字が占める幅
+set noautoindent          " 改行時に前の行のインデントを継続しない 1 
+set nosmartindent         " 改行時に前の行のインデントを継続しない 2
+
+
+"--- コマンドラインの設定
+set history=10000         " コマンドラインの履歴を10000件保存する
+
+
+"--- ビープの設定
+set visualbell t_vb=      " ビープ音すべてを無効にする
+set noerrorbells          " エラーメッセージの表示時にビープを鳴らさない 
+
+"--- ハイライトの色を調整
+syntax on
+highlight Comment ctermfg=Green
+highlight Constant ctermfg=Red
+highlight Identifier ctermfg=Cyan
+highlight Statement ctermfg=Yellow
+highlight Title ctermfg=Magenta
+highlight Special ctermfg=Magenta
+highlight PreProc ctermfg=Magenta 
