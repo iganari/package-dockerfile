@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/igaguri/base-centos-7.svg)](https://microbadger.com/images/igaguri/base-centos-7 "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/igaguri/base-centos-7.svg)](https://microbadger.com/images/igaguri/base-centos-7 "Get your own version badge on microbadger.com")
+
 # centos-7
 
 ### 内容
