@@ -35,8 +35,9 @@ RUN git clone git://git.kernel.org/pub/scm/git/git.git /usr/local/src/git && \
       make prefix=/usr/local install && \
       echo 'export PATH=$PATH:/usr/local/bin' >> /etc/profile
 
-### upgrade pip in Python 2.7
-RUN pip install --upgrade pip
+### upgrade pip,setuptools in Python 2.7
+RUN pip install --upgrade pip \
+                          setuptools
 
 ### install Python 3
 RUN rpm -ivh https://centos7.iuscommunity.org/ius-release.rpm && \
