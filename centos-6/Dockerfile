@@ -32,7 +32,13 @@ RUN rm -rfv /etc/localtime && \
       ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
       echo 'LANG="ja_JP.utf8"' > /etc/locale.conf
 
+### install jq
+RUN curl -o /usr/local/bin/jq -L https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && \
+      chmod 0755 /usr/local/bin/jq
+
+
 ### set env
+ADD ./_bashrc /root/.bashrc
 ADD ./_vimrc  /root/.vimrc
 ADD ./_ssh    /root/.ssh
 RUN chmod 0700 -R /root/.ssh
