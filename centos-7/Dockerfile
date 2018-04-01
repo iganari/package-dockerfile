@@ -47,6 +47,11 @@ RUN rpm -ivh https://centos7.iuscommunity.org/ius-release.rpm && \
 RUN ln -s /usr/bin/python3.6 /usr/bin/python3 && \
       ln -s /usr/bin/pip3.6    /usr/bin/pip3
 
+### install jq
+RUN curl -o /usr/local/bin/jq -L https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && \
+      chmod 0755 /usr/local/bin/jq
+
+
 ### set env
 ADD ./_bashrc /root/.bashrc
 ADD ./_vimrc  /root/.vimrc
