@@ -12,7 +12,8 @@ RUN apt-get install -y \
                     openssh-server \
                     python-apt \
                     python-pip \
-                    tzdata
+                    tzdata \
+                    vim
 RUN pip install --upgrade pip
 
 RUN echo 'LANG="en_US.UTF-8"' > /etc/default/locale
