@@ -2,6 +2,10 @@
 
 # centos-7
 
+### Docker hub URL
+
+https://hub.docker.com/r/igaguri/base-centos-7/
+
 ### 内容
 
 CentOS 7 ベースのDockerコンテナ
