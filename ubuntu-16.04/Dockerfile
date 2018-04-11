@@ -20,3 +20,7 @@ RUN echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 RUN rm -rfv /etc/localtime &&\
     ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime &&\
     dpkg-reconfigure -f noninteractive tzdata
+
+
+
+ADD ./_vimrc /root/.vimrc
