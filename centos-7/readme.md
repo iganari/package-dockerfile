@@ -55,20 +55,3 @@ Python 3.5.4
 pip 9.0.1 from /usr/lib/python3.5/site-packages (python 3.5)
 ```
 
-+ 俯瞰
-
-```
-# ls -l /usr/bin/python*
-lrwxrwxrwx 1 root root /usr/bin/python -> python2
-lrwxrwxrwx 1 root root /usr/bin/python-config -> python2-config
-lrwxrwxrwx 1 root root /usr/bin/python2 -> python2.7
-lrwxrwxrwx 1 root root /usr/bin/python2-config -> python2.7-config
--rwxr-xr-x 1 root root /usr/bin/python2.7
--rwxr-xr-x 1 root root /usr/bin/python2.7-config
--rwxr-xr-x 2 root root /usr/bin/python3.5
-lrwxrwxrwx 1 root root /usr/bin/python3.5-config -> /usr/bin/python3.5m-config
--rwxr-xr-x 2 root root /usr/bin/python3.5m
--rwxr-xr-x 1 root root /usr/bin/python3.5m-config
--rwxr-xr-x 1 root root /usr/bin/python3.5m-x86_64-config
-```
-
