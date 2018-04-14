@@ -1,4 +1,5 @@
 FROM centos:7.4.1708
+# https://hub.docker.com/r/igaguri/base-centos-7/
 
 MAINTAINER iganari
 
