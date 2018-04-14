@@ -46,7 +46,7 @@ RUN rpm -ivh https://centos7.iuscommunity.org/ius-release.rpm && \
                    python36u-devel \
                    python36u-pip
 RUN ln -s /usr/bin/python3.6 /usr/bin/python3 && \
-    ln -s /usr/bin/pip3.6    /usr/bin/pip3 $$ \
+    ln -s /usr/bin/pip3.6    /usr/bin/pip3 && \
     pip3 install --upgrade pip
 
 ### install jq
