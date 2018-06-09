@@ -1,4 +1,6 @@
-[![](https://images.microbadger.com/badges/image/igaguri/base-centos-6.svg)](https://microbadger.com/images/igaguri/base-centos-6 "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/igaguri/base-centos-6.svg)](https://microbadger.com/images/igaguri/base-centos-6 "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/iganarix/base-centos-6.svg)](https://microbadger.com/images/iganarix/base-centos-6 "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/iganarix/base-centos-6.svg)](https://microbadger.com/images/iganarix/base-centos-6 "Get your own version badge on microbadger.com")
+
+
 # centos-6
 
 ### 内容
