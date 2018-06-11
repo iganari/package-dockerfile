@@ -2,7 +2,13 @@
 
 # gcloud
 
-## 使い方
+## Docker Hub
+
+### URL
+
+https://hub.docker.com/r/iganarix/cld-gcloud/
+
+### PULL コマンド
 
 ```
 docker pull iganarix/cld-gcloud
