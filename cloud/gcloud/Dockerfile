@@ -22,3 +22,7 @@ RUN curl -L https://storage.googleapis.com/kubernetes-release/release/${kubectl_
          -o /usr/local/bin/kubectl &&\
     chmod 0755 /usr/local/bin/kubectl
 
+# test badger
+ARG VCS_REF='test'
+LABEL org.label-schema.vcs-ref=$VCS_REF \
+          org.label-schema.vcs-url="https://github.com/microscaling/microscaling"
