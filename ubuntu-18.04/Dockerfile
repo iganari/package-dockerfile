@@ -7,9 +7,11 @@ RUN apt update
 RUN apt install -y \
                 python3-minimal \
                 python3-pip
+                openssh-client \
+                curl \
+                vim
 
-
-
+RUN curl https://gist.githubusercontent.com/iganari/a2baec1af976425cc8e21ccd68cf5585/raw/b6fce2cc91e1c77da759af1d2ea7b771b597787f/_vimrc -o /root/.vimrc
 
 
 # RUN DEBIAN_FRONTEND=noninteractive \
