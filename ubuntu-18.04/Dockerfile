@@ -3,6 +3,8 @@ FROM ubuntu:bionic-20180724.1
 
 MAINTAINER iganari
 
+LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/ubuntu-18.04
+
 RUN apt update
 RUN apt install -y \
                 python3-minimal \
