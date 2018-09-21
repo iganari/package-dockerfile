@@ -6,7 +6,7 @@ MAINTAINER iganari
 RUN apt update
 RUN apt install -y \
                 python3-minimal \
-                python3-pip
+                python3-pip \
                 openssh-client \
                 curl \
                 vim
