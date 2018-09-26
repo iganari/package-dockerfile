@@ -10,4 +10,7 @@ https://hub.docker.com/r/iganarix/google-samples_gb-frontend
 
 ### MicroBadger
 
-https://microbadger.com/images/iganarix/base-alpine
+[![](https://images.microbadger.com/badges/image/iganarix/google-samples_gb-frontend.svg)](https://microbadger.com/images/iganarix/google-samples_gb-frontend "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/iganarix/google-samples_gb-frontend.svg)](https://microbadger.com/images/iganarix/google-samples_gb-frontend "Get your own version badge on microbadger.com")
+
+https://microbadger.com/images/iganarix/google-samples_gb-frontend
