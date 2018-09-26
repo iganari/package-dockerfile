@@ -2,9 +2,13 @@
 
 # centos-7
 
-### Docker hub URL
+### Docker HUB
 
-https://hub.docker.com/r/igaguri/base-centos-7/
+https://hub.docker.com/r/iganarix/google-samples_gb-frontend
+
+### MicroBadger
+
+https://microbadger.com/images/iganarix/base-centos-7
 
 ### 内容
 
