@@ -1,6 +1,7 @@
 #!/bin/bash
 
-set -xeu
+set -xu
+set +e
 
 docker stop $(docker ps | awk 'NR>1 {print $1}')
 docker rm -f $(docker ps -a| awk 'NR>1 {print $1}')
