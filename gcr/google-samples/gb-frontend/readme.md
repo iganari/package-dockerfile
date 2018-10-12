@@ -4,7 +4,7 @@
 
 https://console.cloud.google.com/gcr/images/google-samples/GLOBAL/gb-frontend
 
-### Docker HUB
+### Docker Hub
 
 https://hub.docker.com/r/iganarix/google-samples_gb-frontend
 
