@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: iganarix/base-alpine
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+              - "62:6d:f6:0d:7d:39:54:b0:b7:d5:0e:ef:43:05:e6:f5"
+      - run:
+          name: remote update
+          command: "git remote update -p"
+      - run:
+          name: checkout branch to readme-only
+          command: "git checkout modify-readme-only"
+      - run:
+          name: pull master branch
+          command: "git pull origin master"
+      - run:
+          name: push readme-only branch
+          command: "git push origin modify-readme-only"
+
+workflows:
+  version: 2
+  build_only:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: 
+                - master
