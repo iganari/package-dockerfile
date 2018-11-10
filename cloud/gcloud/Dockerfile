@@ -1,4 +1,7 @@
-FROM google/cloud-sdk:203.0.0-alpine
+ARG _TAG='224.0.0-alpine'
+
+FROM google/cloud-sdk:${_TAG}
+# https://hub.docker.com/r/google/cloud-sdk/
 
 MAINTAINER iganari
 
@@ -16,7 +19,7 @@ RUN apk --update add git && \
 
 # Install kubectl binary via curl
 # https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-curl
-ARG kubectl_version='v1.10.4'
+ARG kubectl_version='v1.12.2'
 
 RUN curl -L https://storage.googleapis.com/kubernetes-release/release/${kubectl_version}/bin/linux/amd64/kubectl \
          -o /usr/local/bin/kubectl &&\
