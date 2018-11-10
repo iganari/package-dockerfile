@@ -9,14 +9,23 @@ jobs:
           fingerprints:
               - "62:6d:f6:0d:7d:39:54:b0:b7:d5:0e:ef:43:05:e6:f5"
       - run:
+          name: install curl
+          command: "apk add curl"
+      - run:
           name: remote update
           command: "git remote update -p"
+      - run:
+          name: setting git config
+          command: "curl 'https://gist.githubusercontent.com/iganari/9d1fb09acaf471c039c5d85b8ecb3423/raw/58c1bc8b76fe9fb814d0995c89b30530dad75bc4/setting-git-iganari' | sh"
       - run:
           name: checkout branch to readme-only
           command: "git checkout modify-readme-only"
       - run:
-          name: pull master branch
-          command: "git pull origin master"
+          name: fetch
+          command: "git fetch"
+      - run:
+          name: merge ${CIRCLE_BRANCH}
+          command: "git merge -m \"merge branch ${CIRCLE_BRANCH} in CircleCI\" origin ${CIRCLE_BRANCH}"
       - run:
           name: push readme-only branch
           command: "git push origin modify-readme-only"
