@@ -10,7 +10,7 @@ force_hard_remove(){
 }
 
 force_soft_remove(){
-    docker system prune
+    docker system prune -y
 
 
 }
