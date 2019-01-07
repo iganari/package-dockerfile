@@ -5,7 +5,7 @@ FROM golang:${_TAG}
 
 MAINTAINER iganari
 
-RUN cp -r /usr/local/go /root/go1.4 && \
-    cd /usr/local/go/src/ && \
+RUN cp -r /usr/local/go /root/go1.4
+RUN cd /usr/local/go/src/ && \
     for OS in linux darwin ; do GOOS=${OS} GOARCH=amd64 ./make.bash ; done
     # ./all.bash
