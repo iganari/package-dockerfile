@@ -37,3 +37,8 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py &&\
     python3 get-pip.py && \
     rm -f get-pip.py && \
     pip3 install awscli==${_AWSCLI_VERSION}
+
+
+ENV PAGER="less"
+ENTRYPOINT ["/usr/bin/aws"]
+CMD ["help"]
