@@ -15,6 +15,12 @@ docker build . --tag $(pwd | awk -F\/ '{print $NF}')
 docker run $(pwd | awk -F\/ '{print $NF}') help
 ```
 
++ Login Docker Container
+
+```
+docker run -it --entrypoint /bin/sh $(pwd | awk -F\/ '{print $NF}')
+```
+
 ## Docker Hub
 
 + WIP
