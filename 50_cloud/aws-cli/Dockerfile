@@ -38,9 +38,10 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py &&\
     rm -f get-pip.py && \
     pip3 install awscli==${_AWSCLI_VERSION}
 
-# MicroBadger
+# Metadata
 LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/30_aws/aws-cli \
-      org.label-schema.alpine-version=${_TAG}
+      org.label-schema.alpine-version=${_TAG} \
+      org.label-schema.awscli-version=${_AWSCLI_VERSION}
 
 ENV PAGER="less"
 ENTRYPOINT ["/usr/bin/aws"]
