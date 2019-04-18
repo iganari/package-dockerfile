@@ -3,6 +3,7 @@ FROM alpine:${_TAG}
 # https://hub.docker.com/_/alpine
 
 MAINTAINER iganari
+LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/30_aws/aws-cli
 
 # OS Prepare
 
