@@ -1,4 +1,4 @@
-# AWS cli
+# AWS CLI
 
 
 ## Command
