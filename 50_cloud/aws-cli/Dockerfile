@@ -3,7 +3,6 @@ FROM alpine:${_TAG}
 # https://hub.docker.com/_/alpine
 
 MAINTAINER iganari
-LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/30_aws/aws-cli
 
 # OS Prepare
 
@@ -39,6 +38,9 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py &&\
     rm -f get-pip.py && \
     pip3 install awscli==${_AWSCLI_VERSION}
 
+# MicroBadger
+LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/30_aws/aws-cli \
+      org.label-schema.alpine-version=${_TAG}
 
 ENV PAGER="less"
 ENTRYPOINT ["/usr/bin/aws"]
