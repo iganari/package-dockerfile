@@ -21,6 +21,12 @@ docker run $(pwd | awk -F\/ '{print $NF}') help
 docker run -it --entrypoint /bin/sh $(pwd | awk -F\/ '{print $NF}')
 ```
 
-## Docker Hub
+## Docker Hub Description
 
-+ WIP
++ GitHub
+    + https://github.com/iganari/package-dockerfile/tree/master/50_cloud/aws-cli
++ Docker Hub
+    + [![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)](https://hub.docker.com/r/iganarix/cld-aws-cli)
++ MicroBadger
+    + [![](https://images.microbadger.com/badges/image/iganarix/cld-aws-cli.svg)](https://microbadger.com/images/iganarix/cld-aws-cli "Get your own image badge on microbadger.com")
+    + [![](https://images.microbadger.com/badges/version/iganarix/cld-aws-cli.svg)](https://microbadger.com/images/iganarix/cld-aws-cli "Get your own version badge on microbadger.com")
