@@ -23,10 +23,8 @@ docker run -it --entrypoint /bin/sh $(pwd | awk -F\/ '{print $NF}')
 
 ## Docker Hub Description
 
-+ https://cloud.docker.com/repository/docker/iganarix/cld-aws-cli
-
 + GitHub
-    + WIP
+    + https://github.com/iganari/package-dockerfile/tree/master/50_cloud/aws-cli
 + Docker Hub
     + [![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)](https://hub.docker.com/r/iganarix/cld-aws-cli)
 + MicroBadger
