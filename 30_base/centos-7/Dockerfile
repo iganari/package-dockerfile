@@ -52,10 +52,3 @@ RUN ln -s /usr/bin/python3.6 /usr/bin/python3 && \
 ### install jq
 RUN curl -o /usr/local/bin/jq -L https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && \
     chmod 0755 /usr/local/bin/jq
-
-
-### set env
-ADD ./_bashrc /root/.bashrc
-ADD ./_vimrc  /root/.vimrc
-ADD ./_ssh    /root/.ssh
-RUN chmod 0700 -R /root/.ssh
