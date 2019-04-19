@@ -21,6 +21,9 @@ docker run $(pwd | awk -F\/ '{print $NF}') help
 docker run -it --entrypoint /bin/sh $(pwd | awk -F\/ '{print $NF}')
 ```
 
-## Docker Hub
+## Docker Hub Description
 
-+ WIP
++ https://cloud.docker.com/repository/docker/iganarix/cld-aws-cli
+
++ GitHUb
+    + 
