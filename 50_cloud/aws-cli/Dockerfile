@@ -2,10 +2,18 @@ ARG _TAG=3.9.3
 FROM alpine:${_TAG}
 # https://hub.docker.com/_/alpine
 
+ARG _AWSCLI_VERSION=1.16.142
+# https://github.com/aws/aws-cli/blob/master/CHANGELOG.rst
+
 MAINTAINER iganari
 
-# OS Prepare
+# Metadata
+LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/30_aws/aws-cli \
+      org.label-schema.alpine-version=${_TAG} \
+      org.label-schema.awscli-version=${_AWSCLI_VERSION}
 
+
+# OS Prepare
 # setting timezone
 RUN apk --update add tzdata && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
@@ -29,19 +37,12 @@ RUN apk --update add python3 \
 # Install AWS CLI
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
 
-ARG _AWSCLI_VERSION=1.16.142
-# https://github.com/aws/aws-cli/blob/master/CHANGELOG.rst
-
 # pip install awscli
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py &&\
     python3 get-pip.py && \
     rm -f get-pip.py && \
     pip3 install awscli==${_AWSCLI_VERSION}
 
-# Metadata
-LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/30_aws/aws-cli \
-      org.label-schema.alpine-version=${_TAG} \
-      org.label-schema.awscli-version=${_AWSCLI_VERSION}
 
 ENV PAGER="less"
 ENTRYPOINT ["/usr/bin/aws"]
