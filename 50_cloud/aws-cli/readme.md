@@ -28,4 +28,4 @@ docker run -it --entrypoint /bin/sh $(pwd | awk -F\/ '{print $NF}')
 + GitHub
     + WIP
 + Docker Hub
-    + WIP
+    + [![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)](https://hub.docker.com/r/iganarix/cld-aws-cli)
