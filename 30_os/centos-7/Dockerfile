@@ -56,5 +56,4 @@ RUN curl -o /usr/local/bin/jq -L https://github.com/stedolan/jq/releases/downloa
 
 ### set env
 ADD ./_bashrc /root/.bashrc
-ADD ./_ssh    /root/.ssh
 RUN chmod 0700 -R /root/.ssh
