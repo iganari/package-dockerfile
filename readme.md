@@ -6,7 +6,7 @@
     + [![CircleCI](https://circleci.com/gh/iganari/package-dockerfile/tree/master.svg?style=svg)](https://circleci.com/gh/iganari/package-dockerfile/tree/master)
 + 30_base
     + centos-7
-        + WIP 
+        + [![dockeri.co](https://dockeri.co/image/iganarix/base-centos-7)](https://hub.docker.com/r/iganarix/base-centos-7)
 + 50_cloud
     + aws-cli
         + [![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)](https://hub.docker.com/r/iganarix/cld-aws-cli)
