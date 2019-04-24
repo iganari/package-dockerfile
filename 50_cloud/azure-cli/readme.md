@@ -1,24 +1,29 @@
 # Azure CLI
 
-
 ## Command
 
-+ Create Docker images
++ Create Docker image
 
 ```
-docker build . --tag $(pwd | awk -F\/ '{print $NF}')
+docker build . --tag my_$(pwd | awk -F\/ '{print $NF}')
 ```
 
 + Run AWS CLI using Docker images
 
 ```
-docker run $(pwd | awk -F\/ '{print $NF}') help
+docker run my_$(pwd | awk -F\/ '{print $NF}') help
 ```
 
-+ Login Docker Container
++ Check Docker Container's LABEL
 
 ```
-docker run -it --entrypoint /bin/sh $(pwd | awk -F\/ '{print $NF}')
+docker inspect my_$(pwd | awk -F\/ '{print $NF}') | jq .[].ContainerConfig.Labels
+```
+
++ Lunch and Login Docker Container
+
+```
+docker run -it --entrypoint /bin/sh my_$(pwd | awk -F\/ '{print $NF}')
 ```
 
 ## Docker Hub
