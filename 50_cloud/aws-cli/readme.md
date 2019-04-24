@@ -6,19 +6,19 @@
 + Create Docker images
 
 ```
-docker build . --tag $(pwd | awk -F\/ '{print $NF}')
+docker build . --tag my_$(pwd | awk -F\/ '{print $NF}')
 ```
 
 + Run AWS CLI using Docker images
 
 ```
-docker run $(pwd | awk -F\/ '{print $NF}') help
+docker run my_$(pwd | awk -F\/ '{print $NF}') help
 ```
 
 + Login Docker Container
 
 ```
-docker run -it --entrypoint /bin/sh $(pwd | awk -F\/ '{print $NF}')
+docker run -it --entrypoint /bin/sh my_$(pwd | awk -F\/ '{print $NF}')
 ```
 
 ## Docker Hub Description
