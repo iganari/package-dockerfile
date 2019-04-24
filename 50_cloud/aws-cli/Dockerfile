@@ -2,14 +2,14 @@ ARG _TAG=3.9.3
 FROM alpine:${_TAG}
 # https://hub.docker.com/_/alpine
 
-ARG _AWSCLI_VERSION=1.16.142
+ENV _AWSCLI_VERSION=1.16.142 _VERSION=3.9.3
 # https://github.com/aws/aws-cli/blob/master/CHANGELOG.rst
 
 MAINTAINER iganari
 
 # Metadata
 LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/30_aws/aws-cli \
-      org.label-schema.alpine-version=${_TAG} \
+      org.label-schema.alpine-version=${_VERSION} \
       org.label-schema.awscli-version=${_AWSCLI_VERSION}
 
 
