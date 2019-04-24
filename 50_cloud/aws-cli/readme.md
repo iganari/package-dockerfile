@@ -1,9 +1,8 @@
 # AWS CLI
 
-
 ## Command
 
-+ Create Docker images
++ Create Docker image
 
 ```
 docker build . --tag my_$(pwd | awk -F\/ '{print $NF}')
@@ -15,7 +14,13 @@ docker build . --tag my_$(pwd | awk -F\/ '{print $NF}')
 docker run my_$(pwd | awk -F\/ '{print $NF}') help
 ```
 
-+ Login Docker Container
++ Check Docker Container's LABEL
+
+```
+docker inspect my_$(pwd | awk -F\/ '{print $NF}') | jq .[].ContainerConfig.Labels
+```
+
++ Lunch and Login Docker Container
 
 ```
 docker run -it --entrypoint /bin/sh my_$(pwd | awk -F\/ '{print $NF}')
