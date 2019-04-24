@@ -4,9 +4,11 @@ FROM alpine:${_TAG}
 
 MAINTAINER iganari
 
+ENV _VERSION 3.9.3
+
 # Metadata
 LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/30_aws/aws-cli \
-      org.label-schema.alpine-version=${_TAG}
+      org.label-schema.alpine-version=${_VERSION}
 
 
 # OS Prepare
