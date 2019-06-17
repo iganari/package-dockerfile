@@ -1,4 +1,4 @@
-# Alpine
+# Ubuntu 18.04
 
 
 ## Command
@@ -9,10 +9,16 @@
 docker build . --tag my_$(pwd | awk -F\/ '{print $NF}')
 ```
 
-+ Run AWS CLI using Docker images
++ Check created Docker image
 
 ```
-docker run my_$(pwd | awk -F\/ '{print $NF}') help
+docker images | grep my_$(pwd | awk -F\/ '{print $NF}')
+```
+
++ Check OS Version
+
+```
+docker run my_$(pwd | awk -F\/ '{print $NF}') cat /etc/os-release
 ```
 
 + Check Docker Container's LABEL

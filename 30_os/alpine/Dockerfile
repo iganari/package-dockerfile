@@ -1,4 +1,4 @@
-ARG _TAG=3.9.3
+ARG _TAG=3.9.4
 FROM alpine:${_TAG}
 # https://hub.docker.com/_/alpine
 
@@ -12,13 +12,13 @@ LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tre
 
 
 # OS Prepare
-# setting timezone
+# Setting timezone
 RUN apk --update add tzdata && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     apk del tzdata && \
     rm -rf /var/cache/apk/*
 
-# install git, OpenSSH
+# Install git, OpenSSH
 RUN apk --update add git openssh && \
     rm -rf /var/lib/apt/lists/* && \
-    rm /var/cache/apk/*
+    rm -rf /var/cache/apk/*
