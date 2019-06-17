@@ -1,4 +1,0 @@
-Host                    *
-  GSSAPIAuthentication  no
-  StrictHostKeyChecking no
-  UserKnownHostsFile=/dev/null
