@@ -35,4 +35,4 @@ docker run -it --entrypoint /bin/sh my_$(pwd | awk -F\/ '{print $NF}')
 
 ## Docker Hub
 
-+ https://cloud.docker.com/repository/docker/iganarix/os-alpine
++ WIP 
