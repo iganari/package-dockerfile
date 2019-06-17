@@ -7,7 +7,7 @@
 + 30_os
     + alpine
         + [![dockeri.co](https://dockeri.co/image/iganarix/os-alpine)](https://hub.docker.com/r/iganarix/os-alpine)
-        + [![](https://images.microbadger.com/badges/image/iganarix/os-ubuntu-18.04.svg)](https://microbadger.com/images/iganarix/os-ubuntu-18.04 "Get your own image badge on microbadger.com")
+        + [![](https://images.microbadger.com/badges/image/iganarix/base-alpine.svg)](https://microbadger.com/images/iganarix/base-alpine "Get your own image badge on microbadger.com")
     + centos-6
         + No Docker HUb
     + centos-7
