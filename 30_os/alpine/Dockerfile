@@ -1,4 +1,4 @@
-ARG _TAG=3.9.3
+ARG _TAG=3.9.4
 FROM alpine:${_TAG}
 # https://hub.docker.com/_/alpine
 
