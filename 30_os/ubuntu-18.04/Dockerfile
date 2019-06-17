@@ -1,4 +1,4 @@
-FROM ubuntu:bionic-20180724.1
+FROM ubuntu:bionic-20190515
 # https://hub.docker.com/_/ubuntu/
 
 MAINTAINER iganari
