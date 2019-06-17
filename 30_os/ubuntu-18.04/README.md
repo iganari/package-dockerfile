@@ -1,13 +1,38 @@
-[![](https://images.microbadger.com/badges/image/iganarix/base-ubuntu-18.04.svg)](https://microbadger.com/images/iganarix/base-ubuntu-18.04 "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/iganarix/base-ubuntu-18.04.svg)](https://microbadger.com/images/iganarix/base-ubuntu-18.04 "Get your own version badge on microbadger.com")
+# Ubuntu 18.04
 
 
-# ubuntu-18.04
+## Command
 
-### Docker Hub
++ Create Docker image
 
-https://hub.docker.com/r/iganarix/base-ubuntu-18.04
+```
+docker build . --tag my_$(pwd | awk -F\/ '{print $NF}')
+```
 
-### MicroBadger
++ Check created Docker image
 
-https://microbadger.com/images/iganarix/base-ubuntu-18.04
+```
+docker images | grep my_$(pwd | awk -F\/ '{print $NF}')
+```
+
++ Check OS Version
+
+```
+docker run my_$(pwd | awk -F\/ '{print $NF}') cat /etc/os-release
+```
+
++ Check Docker Container's LABEL
+
+```
+docker inspect my_$(pwd | awk -F\/ '{print $NF}') | jq .[].ContainerConfig.Labels
+```
+
++ Lunch and Login Docker Container
+
+```
+docker run -it --entrypoint /bin/sh my_$(pwd | awk -F\/ '{print $NF}')
+```
+
+## Docker Hub
+
++ WIP
