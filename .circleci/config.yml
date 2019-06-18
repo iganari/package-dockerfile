@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: iganarix/base-alpine
+      - image: iganarix/os-alpine
     steps:
       - checkout
       - add_ssh_keys:
