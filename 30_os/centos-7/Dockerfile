@@ -38,20 +38,20 @@ RUN git clone git://git.kernel.org/pub/scm/git/git.git /usr/local/src/git && \
     rm -rfv /usr/local/src/git
 
 
-# ### upgrade pip,setuptools in Python 2.7
-# RUN pip install --upgrade pip \
-#                           setuptools
-# 
-# ### install Python 3
-# RUN rpm -ivh https://centos7.iuscommunity.org/ius-release.rpm && \
-#     yum install -y python36u \
-#                    python36u-libs \
-#                    python36u-devel \
-#                    python36u-pip
-# RUN ln -s /usr/bin/python3.6 /usr/bin/python3 && \
-#     ln -s /usr/bin/pip3.6    /usr/bin/pip3 && \
-#     pip3 install --upgrade pip
-# 
-# ### install jq
-# RUN curl -o /usr/local/bin/jq -L https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && \
-#     chmod 0755 /usr/local/bin/jq
+### upgrade pip,setuptools in Python 2.7
+RUN pip install --upgrade pip \
+                          setuptools
+
+### install Python 3
+RUN rpm -ivh https://centos7.iuscommunity.org/ius-release.rpm && \
+    yum install -y python36u \
+                   python36u-libs \
+                   python36u-devel \
+                   python36u-pip
+RUN ln -s /usr/bin/python3.6 /usr/bin/python3 && \
+    ln -s /usr/bin/pip3.6    /usr/bin/pip3 && \
+    pip3 install --upgrade pip
+
+### install jq
+RUN curl -o /usr/local/bin/jq -L https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && \
+    chmod 0755 /usr/local/bin/jq
