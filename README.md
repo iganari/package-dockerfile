@@ -11,8 +11,8 @@
     + centos-6
         + No Docker HUb
     + centos-7
-        + [![dockeri.co](https://dockeri.co/image/iganarix/base-centos-7)](https://hub.docker.com/r/iganarix/base-centos-7)
-        + [![](https://images.microbadger.com/badges/image/iganarix/base-centos-7.svg)](https://microbadger.com/images/iganarix/base-centos-7 "Get your own image badge on microbadger.com")
+        + [![dockeri.co](https://dockeri.co/image/iganarix/os-centos-7)](https://hub.docker.com/r/iganarix/os-centos-7)
+        + [![](https://images.microbadger.com/badges/image/iganarix/os-centos-7.svg)](https://microbadger.com/images/iganarix/os-centos-7 "Get your own image badge on microbadger.com")
     + ubuntu-16.04
         + No Docker HUb
     + ubuntu-18.04
