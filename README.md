@@ -6,7 +6,8 @@
     + [![CircleCI](https://circleci.com/gh/iganari/package-dockerfile/tree/master.svg?style=svg)](https://circleci.com/gh/iganari/package-dockerfile/tree/master)
 + 10_lang
     + python
-        + WIP
+        + [![dockeri.co](https://dockeri.co/image/iganarix/lang-python)](https://hub.docker.com/r/iganarix/lang-python)
+        + [![](https://images.microbadger.com/badges/image/iganarix/lang-python.svg)](https://microbadger.com/images/iganarix/lang-python "Get your own image badge on microbadger.com")
 + 30_os
     + alpine
         + [![dockeri.co](https://dockeri.co/image/iganarix/os-alpine)](https://hub.docker.com/r/iganarix/os-alpine)
