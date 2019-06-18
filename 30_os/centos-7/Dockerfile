@@ -1,5 +1,5 @@
-FROM centos:7.4.1708
-# https://hub.docker.com/r/igaguri/base-centos-7/
+FROM centos:7.6.1810
+# https://hub.docker.com/_/centos
 
 MAINTAINER iganari
 
@@ -31,9 +31,12 @@ RUN rm -rfv /etc/localtime && \
 RUN git clone git://git.kernel.org/pub/scm/git/git.git /usr/local/src/git && \
     yum remove -y git && \
     cd /usr/local/src/git && \
-    make prefix=/usr/local all && \
-    make prefix=/usr/local install && \
-    echo 'export PATH=$PATH:/usr/local/bin' >> /etc/profile
+    make prefix=/usr/local/git all && \
+    make prefix=/usr/local/git install && \
+    ln -s  /usr/local/git/bin/git /usr/local/bin/git && \
+    cd - \
+    rm -rfv /usr/local/src/git
+
 
 ### upgrade pip,setuptools in Python 2.7
 RUN pip install --upgrade pip \

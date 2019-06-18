@@ -13,6 +13,7 @@ RUN apt update && \
     apt dist-upgrade -y && \
     apt autoremove -y
 RUN apt install -y \
+                --no-install-recommends \
                 python3-minimal \
                 python3-pip \
                 openssh-client \

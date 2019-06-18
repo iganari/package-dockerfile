@@ -1,4 +1,4 @@
-# Alpine
+# CentOS 7
 
 
 ## Command
@@ -35,4 +35,4 @@ docker run -it --rm --entrypoint /bin/sh --name my_$(pwd | awk -F\/ '{print $NF}
 
 ## Docker Hub
 
-+ https://cloud.docker.com/repository/docker/iganarix/os-alpine
++ WIP 

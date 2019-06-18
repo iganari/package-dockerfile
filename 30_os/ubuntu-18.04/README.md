@@ -30,9 +30,9 @@ docker inspect my_$(pwd | awk -F\/ '{print $NF}') | jq .[].ContainerConfig.Label
 + Lunch and Login Docker Container
 
 ```
-docker run -it --entrypoint /bin/sh my_$(pwd | awk -F\/ '{print $NF}')
+docker run -it --rm --entrypoint /bin/sh --name my_$(pwd | awk -F\/ '{print $NF}')_container my_$(pwd | awk -F\/ '{print $NF}')
 ```
 
 ## Docker Hub
 
-+ WIP
++ https://cloud.docker.com/repository/docker/iganarix/os-ubuntu-18.04
