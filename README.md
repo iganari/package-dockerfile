@@ -5,6 +5,9 @@
 + README
     + [![CircleCI](https://circleci.com/gh/iganari/package-dockerfile/tree/master.svg?style=svg)](https://circleci.com/gh/iganari/package-dockerfile/tree/master)
 + 10_lang
+    + golang
+        + [![dockeri.co](https://dockeri.co/image/iganarix/lang-golang)](https://hub.docker.com/r/iganarix/lang-golang)
+        + [![](https://images.microbadger.com/badges/image/iganarix/lang-golang.svg)](https://microbadger.com/images/iganarix/lang-golang "Get your own image badge on microbadger.com")
     + python
         + [![dockeri.co](https://dockeri.co/image/iganarix/lang-python)](https://hub.docker.com/r/iganarix/lang-python)
         + [![](https://images.microbadger.com/badges/image/iganarix/lang-python.svg)](https://microbadger.com/images/iganarix/lang-python "Get your own image badge on microbadger.com")
