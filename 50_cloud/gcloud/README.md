@@ -8,7 +8,7 @@
 docker build . --tag my_$(pwd | awk -F\/ '{print $NF}')
 ```
 
-+ Run AWS CLI using Docker images
++ Run Google CLI using Docker images
 
 ```
 docker run my_$(pwd | awk -F\/ '{print $NF}') help
