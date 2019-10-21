@@ -11,7 +11,7 @@ docker build . --tag my_$(pwd | awk -F\/ '{print $NF}')
 + Run Google CLI using Docker images
 
 ```
-docker run my_$(pwd | awk -F\/ '{print $NF}') help
+docker run my_$(pwd | awk -F\/ '{print $NF}') gloud help
 ```
 
 + Check Docker Container's LABEL
