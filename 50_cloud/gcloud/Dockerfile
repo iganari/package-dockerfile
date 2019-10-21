@@ -19,7 +19,7 @@ RUN apk --update add git && \
 # Install kubectl binary via curl
 # https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-curl
 # https://storage.googleapis.com/kubernetes-release/release/stable.txt
-ENV _KUBECTL_VERSION='v1.14.1'
+ENV _KUBECTL_VERSION='v1.16.2'
 
 # Metadata
 LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/50_cloud/gcloud \
