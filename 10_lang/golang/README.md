@@ -34,4 +34,4 @@ docker run -it --rm --entrypoint /bin/sh --name my_$(pwd | awk -F\/ '{print $NF}
 
 ## Docker Hub
 
-+ WIP 
++ https://hub.docker.com/repository/docker/iganarix/cld-gcloud
