@@ -1,6 +1,7 @@
-ARG _TAG=0.9.9
+ARG _TAG=2.0.76
 FROM microsoft/azure-cli:${_TAG}
-# https://hub.docker.com/r/microsoft/azure-cli
+# https://hub.docker.com/_/microsoft-azure-cli
+# https://github.com/Azure/azure-cli/releases
 
 MAINTAINER iganari
 
