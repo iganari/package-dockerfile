@@ -1,6 +1,6 @@
-ARG _TAG=0.9.9
-FROM microsoft/azure-cli:${_TAG}
-# https://hub.docker.com/r/microsoft/azure-cli
+ARG _TAG=2.0.80
+FROM mcr.microsoft.com/azure-cli:${_TAG}
+# https://hub.docker.com/_/microsoft-azure-cli
 
 MAINTAINER iganari
 
