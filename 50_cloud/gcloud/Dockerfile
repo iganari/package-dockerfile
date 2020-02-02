@@ -1,4 +1,4 @@
-ARG _TAG='274.0.0-alpine'
+ARG _TAG='278.0.0-alpine'
 FROM google/cloud-sdk:${_TAG}
 # https://hub.docker.com/r/google/cloud-sdk/
 
