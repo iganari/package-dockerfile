@@ -9,23 +9,45 @@ remove-unused-data() {
     docker system prune --all -y
 }
 
-remove-container-images() {
-    docker stop $(docker ps | awk 'NR>1 {print $1}')
-    docker rm -f $(docker ps -a| awk 'NR>1 {print $1}')
-    docker rmi -f $(docker images -q | uniq)
-    ### これだと Local Volumes が残る
-}
-
-remove-local-volume-only() {
-    docker volume rm -f $(docker volume ls | awk 'NR>1 {print $2}')
+remove-local-volume() {
     ### Local Volumes のみを削除
+    if [ $(docker volume ls | awk 'NR>1 {print $2}' | wc | awk '{print $1}') = "0" ];then
+      :
+    else
+      docker volume rm -f $(docker volume ls | awk 'NR>1 {print $2}')
+    fi
 }
 
+stop-container() {
+    if [ $(docker ps | awk 'NR>1' | wc | awk '{print $1}') = "0" ];then
+      :
+    else
+      docker stop $(docker ps | awk 'NR>1 {print $1}')
+    fi
+}
 
-### ALL Delete
+remove-container() {
+    if [ $(docker ps -a | awk 'NR>1' | wc | awk '{print $1}') = "0" ];then
+      :
+    else
+      docker rm $(docker ps -a | awk 'NR>1 {print $1}')
+    fi
+}
+
+remove-image() {
+    if [ $(docker images -q | uniq | wc | awk '{print $1}') = "0" ];then
+      :
+    else
+      docker rmi -f $(docker images -q | uniq | awk '{print $1}')
+    fi
+}
+
+### All Delete
 docker system df && \
-remove-container-images && \
-remove-local-volume-only && \
+stop-container && \
+remove-container && \
+remove-image && \
+remove-local-volume && \
 docker system df
 
 ## ### Only Unused Delete
