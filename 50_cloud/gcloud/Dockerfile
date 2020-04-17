@@ -1,4 +1,4 @@
-ARG _TAG='281.0.0-alpine'
+ARG _TAG='288.0.0-alpine'
 FROM google/cloud-sdk:${_TAG}
 # https://hub.docker.com/r/google/cloud-sdk/
 
@@ -25,7 +25,6 @@ ENV _KUBECTL_VERSION='v1.17.3'
 LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/50_cloud/gcloud \
       org.label-schema.kubectl-version=${_KUBECTL_VERSION}
 
-RUN curl -L https://storage.googleapis.com/kubernetes-release/release/${_KUBECTL_VERSION}/bin/linux/amd64/kubectl \
-         -o /usr/local/bin/kubectl &&\
-    chmod 0755 /usr/local/bin/kubectl
-
+# RUN curl -L https://storage.googleapis.com/kubernetes-release/release/${_KUBECTL_VERSION}/bin/linux/amd64/kubectl \
+#          -o /usr/local/bin/kubectl &&\
+#     chmod 0755 /usr/local/bin/kubectl

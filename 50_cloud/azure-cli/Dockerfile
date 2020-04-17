@@ -1,6 +1,7 @@
-ARG _TAG=2.0.80
+ARG _TAG=2.3.1
 FROM mcr.microsoft.com/azure-cli:${_TAG}
 # https://hub.docker.com/_/microsoft-azure-cli
+# Tag List --> https://mcr.microsoft.com/v2/azure-cli/tags/list
 
 MAINTAINER iganari
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -xu
-set +e
+set -e
 
 remove-unused-data() {
     # https://docs.docker.com/engine/reference/commandline/system_prune/
