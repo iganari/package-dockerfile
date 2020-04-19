@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - master
-      - 'feature/add-github-actions'
+      # - 'feature/hogehoge'
       # - develop
 
 jobs:
