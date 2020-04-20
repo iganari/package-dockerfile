@@ -9,23 +9,37 @@ README
 10_lang
 
 + golang
-  + [![dockeri.co](https://dockeri.co/image/iganarix/lang-golang)](https://hub.docker.com/r/iganarix/lang-golang)
-  + [![](https://images.microbadger.com/badges/image/iganarix/lang-golang.svg)](https://microbadger.com/images/iganarix/lang-golang "Get your own image badge on microbadger.com")
+
+![](https://images.microbadger.com/badges/image/iganarix/lang-golang.svg)
+
+![dockeri.co](https://dockeri.co/image/iganarix/lang-golang)
+  
 + python
-  + [![dockeri.co](https://dockeri.co/image/iganarix/lang-python)](https://hub.docker.com/r/iganarix/lang-python)
-  + [![](https://images.microbadger.com/badges/image/iganarix/lang-python.svg)](https://microbadger.com/images/iganarix/lang-python "Get your own image badge on microbadger.com")
+
+![](https://images.microbadger.com/badges/image/iganarix/lang-python.svg)
+
+![dockeri.co](https://dockeri.co/image/iganarix/lang-python)
 
 30_os
 
 + alpine
-  + [![dockeri.co](https://dockeri.co/image/iganarix/os-alpine)](https://hub.docker.com/r/iganarix/os-alpine)
-  + [![](https://images.microbadger.com/badges/image/iganarix/os-alpine.svg)](https://microbadger.com/images/iganarix/os-alpine "Get your own image badge on microbadger.com")
+
+![](https://images.microbadger.com/badges/image/iganarix/os-alpine.svg)
+
+![dockeri.co](https://dockeri.co/image/iganarix/os-alpine)
+
 + centos-7
-  + [![dockeri.co](https://dockeri.co/image/iganarix/os-centos-7)](https://hub.docker.com/r/iganarix/os-centos-7)
-  + [![](https://images.microbadger.com/badges/image/iganarix/os-centos-7.svg)](https://microbadger.com/images/iganarix/os-centos-7 "Get your own image badge on microbadger.com")
+
+![](https://images.microbadger.com/badges/image/iganarix/os-centos-7.svg)
+
+![dockeri.co](https://dockeri.co/image/iganarix/os-centos-7)
+
 + ubuntu-18.04
-  + [![dockeri.co](https://dockeri.co/image/iganarix/os-ubuntu-18.04)](https://hub.docker.com/r/iganarix/os-ubuntu-18.04)
-  + [![](https://images.microbadger.com/badges/image/iganarix/os-ubuntu-18.04.svg)](https://microbadger.com/images/iganarix/os-ubuntu-18.04 "Get your own image badge on microbadger.com")
+
+![](https://images.microbadger.com/badges/image/iganarix/os-ubuntu-18.04.svg)
+
+![dockeri.co](https://dockeri.co/image/iganarix/os-ubuntu-18.04)
+
 
 ## 50_cloud
 
@@ -41,6 +55,8 @@ WIP
 
 + gcloud
 
+![](https://images.microbadger.com/badges/image/iganarix/cld-gcloud.svg)
+
 ![dockeri.co](https://dockeri.co/image/iganarix/cld-gcloud)
 
-![](https://images.microbadger.com/badges/image/iganarix/cld-gcloud.svg)
+
