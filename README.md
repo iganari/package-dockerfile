@@ -41,7 +41,9 @@ README ![](https://github.com/iganari/package-dockerfile/workflows/update-readme
 
 ## 50_cloud
 
-+ aws-cli ![](https://images.microbadger.com/badges/image/iganarix/cld-aws-cli.svg)
++ aws-cli
+
+![](https://images.microbadger.com/badges/image/iganarix/cld-aws-cli.svg)
 
 ![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)
 
@@ -49,7 +51,9 @@ README ![](https://github.com/iganari/package-dockerfile/workflows/update-readme
 
 WIP
 
-+ gcloud ![](https://images.microbadger.com/badges/image/iganarix/cld-gcloud.svg)
++ gcloud
+
+![](https://images.microbadger.com/badges/image/iganarix/cld-gcloud.svg)
 
 ![dockeri.co](https://dockeri.co/image/iganarix/cld-gcloud)
 
