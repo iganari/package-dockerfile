@@ -27,13 +27,20 @@ README
   + [![dockeri.co](https://dockeri.co/image/iganarix/os-ubuntu-18.04)](https://hub.docker.com/r/iganarix/os-ubuntu-18.04)
   + [![](https://images.microbadger.com/badges/image/iganarix/os-ubuntu-18.04.svg)](https://microbadger.com/images/iganarix/os-ubuntu-18.04 "Get your own image badge on microbadger.com")
 
-50_cloud
+## 50_cloud
 
 + aws-cli
-  + [![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)](https://hub.docker.com/r/iganarix/cld-aws-cli)
-  + [![](https://images.microbadger.com/badges/image/iganarix/cld-aws-cli.svg)](https://microbadger.com/images/iganarix/cld-aws-cli "Get your own image badge on microbadger.com")
+
+![](https://images.microbadger.com/badges/image/iganarix/cld-aws-cli.svg)
+
+![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)
+
 + azure-cli
-  + WIP
+
+WIP
+
 + gcloud
-  + [![dockeri.co](https://dockeri.co/image/iganarix/cld-gcloud)](https://hub.docker.com/r/iganarix/cld-gcloud)
-  + [![](https://images.microbadger.com/badges/image/iganarix/cld-gcloud.svg)](https://microbadger.com/images/iganarix/cld-gcloud "Get your own image badge on microbadger.com")
+
+![dockeri.co](https://dockeri.co/image/iganarix/cld-gcloud)
+
+![](https://images.microbadger.com/badges/image/iganarix/cld-gcloud.svg)
