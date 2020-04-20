@@ -35,4 +35,5 @@
 + azure-cli
   + WIP
 + gcloud
-  + WIP
+  + [![dockeri.co](https://dockeri.co/image/iganarix/cld-gcloud)](https://hub.docker.com/r/iganarix/cld-gcloud)
+  + [![](https://images.microbadger.com/badges/image/iganarix/cld-gcloud.svg)](https://microbadger.com/images/iganarix/cld-gcloud "Get your own image badge on microbadger.com")
