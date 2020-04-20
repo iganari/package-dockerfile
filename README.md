@@ -2,7 +2,7 @@
 
 ![](./icon.png)
 
-+ README
+README
 
 ![](https://github.com/iganari/package-dockerfile/workflows/update-readme-branch/badge.svg)
 
