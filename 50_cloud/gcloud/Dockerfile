@@ -28,3 +28,6 @@ ENV _KUBECTL_VERSION='v1.18.2'
 RUN curl -L https://storage.googleapis.com/kubernetes-release/release/${_KUBECTL_VERSION}/bin/linux/amd64/kubectl \
          -o /usr/local/bin/kubectl &&\
     chmod 0755 /usr/local/bin/kubectl
+
+RUN gcloud components install beta -q &&\
+    gcloud components update -q
