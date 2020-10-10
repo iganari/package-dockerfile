@@ -1,6 +1,6 @@
 ARG _TAG=1.13.4-alpine3.10
 FROM golang:${_TAG}
-# https://hub.docker.com/_/golang
+# https://hub.docker.com/_/golang?tab=tags&page=1&name=-alpine
 
 MAINTAINER iganari
 
