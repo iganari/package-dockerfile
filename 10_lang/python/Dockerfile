@@ -1,4 +1,4 @@
-ARG _TAG=3.8.0b1-alpine3.9
+ARG _TAG=3.9.2-alpine3.12
 FROM python:${_TAG}
 # https://hub.docker.com/_/python?tab=tags&page=1&name=-alpine
 

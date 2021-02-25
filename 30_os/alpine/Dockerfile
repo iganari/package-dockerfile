@@ -1,6 +1,6 @@
-ARG _TAG=3.10.2
+ARG _TAG=3.12.4
 FROM alpine:${_TAG}
-# https://hub.docker.com/_/alpine
+# https://hub.docker.com/_/alpine?tab=tags&page=1&ordering=last_updated 
 
 MAINTAINER iganari
 
