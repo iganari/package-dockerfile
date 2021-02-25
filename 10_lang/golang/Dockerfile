@@ -1,4 +1,4 @@
-ARG _TAG=1.15.2-alpine3.12
+ARG _TAG=1.15.8-alpine3.12
 FROM golang:${_TAG}
 # https://hub.docker.com/_/golang?tab=tags&page=1&name=-alpine
 
