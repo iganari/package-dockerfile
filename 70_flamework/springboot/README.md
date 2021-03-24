@@ -13,6 +13,10 @@ https://spring.io/guides/gs/spring-boot/
 
 ## 実際にやってみる
 
+```
+cd 70_flamework/springboot
+```
+
 + Create Docker image
 
 ```
@@ -22,5 +26,11 @@ docker build . --tag my-spring-boot
 + Lunch and Login Docker Container
 
 ```
-docker run -it --rm -v $(pwd):/data/demo -w /data --name my-spring-boot my-spring-boot /bin/bash
+docker run -it --rm -v $(pwd)/demo:/data/ -w /data -p 8080:8080 --name my-spring-boot my-spring-boot /bin/bash
+```
+
++ :whale: 
+
+```
+./gradlew bootRun
 ```
