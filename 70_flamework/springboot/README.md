@@ -77,3 +77,11 @@ docker run -it --rm -v $(pwd)/demo:/data/ -w /data -p 8080:8080 --name my-spring
 ```
 0.0.0.0:8080
 ```
+
+## リソースの削除
+
+```
+docker stop my-spring-boot
+docker rm -f my-spring-boot
+docker rmi my-spring-boot
+```
