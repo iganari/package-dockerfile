@@ -14,7 +14,7 @@ https://spring.io/guides/gs/spring-boot/
 ## 実際にやってみる
 
 ```
-cd 70_flamework/springboot
+cd 70_flamework/spring-boot
 ```
 
 + Create Docker image
@@ -40,6 +40,8 @@ docker ps
 ```
 0.0.0.0:8080
 ```
+
+![](./img/02.png)
 
 ## デバック
 
