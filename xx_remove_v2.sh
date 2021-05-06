@@ -42,12 +42,17 @@ remove-image() {
     fi
 }
 
+remove-buildercache() {
+    docker builder prune -a -f
+}
+
 ### All Delete
 docker system df && \
 stop-container && \
 remove-container && \
 remove-image && \
 remove-local-volume && \
+remove-buildercache && \
 docker system df
 
 ## ### Only Unused Delete
