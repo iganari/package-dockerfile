@@ -24,7 +24,7 @@ docker run my_$(pwd | awk -F\/ '{print $NF}') cat /etc/os-release
 + Lunch and Login Docker Container
 
 ```
-docker run -it --rm --entrypoint /bin/sh --name my_$(pwd | awk -F\/ '{print $NF}')_container my_$(pwd | awk -F\/ '{print $NF}')
+docker run -it --rm --entrypoint /bin/bash --name my_$(pwd | awk -F\/ '{print $NF}')_container my_$(pwd | awk -F\/ '{print $NF}')
 ```
 
 ## Docker Hub
