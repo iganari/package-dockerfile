@@ -18,3 +18,5 @@ RUN cd /usr/local/src/ && \
     rpm -ivh oracle-instantclient-sqlplus-21.1.0.0.0-1.x86_64.rpm && \
     rm -f oracle-instantclient*.rpm
 
+ADD tnsnames.ora /lib/oracle/21/client64/lib/network/admin/tnsnames.ora
+# ENV TNS_ADMIN=/lib/oracle/21/client64/lib/network/admin
