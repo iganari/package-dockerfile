@@ -1,4 +1,4 @@
-ARG _TAG=2.23.0
+ARG _TAG=2.25.0
 FROM mcr.microsoft.com/azure-cli:${_TAG}
 # https://hub.docker.com/_/microsoft-azure-cli
 # Tag List --> https://mcr.microsoft.com/v2/azure-cli/tags/list
