@@ -1,8 +1,13 @@
 ARG _TAG=3.14.1
 FROM alpine:${_TAG}
-# https://hub.docker.com/_/alpine?tab=tags&page=1&ordering=last_updated
+# https://hub.docker.com/_/alpine?tab=tags&page=1&ordering=last_updated 
 
-# ENV _VERSION 3.9.3
+ENV _VERSION 3.9.3
+
+# # Metadata
+# LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/30_aws/aws-cli \
+#       org.label-schema.alpine-version=${_VERSION}
+
 
 # OS Prepare
 # Setting timezone
