@@ -1,8 +1,6 @@
-ARG _TAG=3.12.4
+ARG _TAG=3.14.1
 FROM alpine:${_TAG}
-# https://hub.docker.com/_/alpine?tab=tags&page=1&ordering=last_updated 
-
-MAINTAINER iganari
+# https://hub.docker.com/_/alpine?tab=tags&page=1&ordering=last_updated
 
 ENV _VERSION 3.9.3
 
