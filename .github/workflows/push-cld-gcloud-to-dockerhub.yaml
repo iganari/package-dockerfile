@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - 'feature/add-dockerhub-to-githubactions'
       # - 'feature/hogehoge'
 
 jobs:
