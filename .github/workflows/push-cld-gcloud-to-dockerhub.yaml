@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: push
-        shell: bash
+        # shell: bash
         env:
           docker_hub_user:   ${{ secrets.DOCKER_HUB_USER }}
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD}}
