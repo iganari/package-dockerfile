@@ -1,4 +1,4 @@
-name: 'push-cld-gcloud'
+name: Update Contanier Image on Docker Hub
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   step:
-    name: Update Contanier Image on Docker Hub
+    name: update iganarix/cld-gcloud
     runs-on: ubuntu-20.04
     steps:
       - name: Check out repository code
