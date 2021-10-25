@@ -25,10 +25,9 @@ jobs:
         run: | 
           ls ${{ github.workspace }}
           pwd
-
-          # docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
-          # docker build 50_cloud/gcloud/Dockerfile --tag iganarix/cld-gcloud
-          # docker push iganarix/cld-gcloud
+          docker build 50_cloud/gcloud/Dockerfile --tag iganarix/cld-gcloud
+          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+          docker push iganarix/cld-gcloud
           # cd /tmp
           # echo "Git Clone ${GITHUB_REPOSITORY}"
           # git clone https://${iganari_dev_token}@github.com/${GITHUB_REPOSITORY}.git
