@@ -21,8 +21,7 @@ jobs:
           docker_hub_user:   ${{ secrets.DOCKER_HUB_USER }}
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD}}
         run: |
-
-          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+          # docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           ls
           # docker build 50_cloud/gcloud/Dockerfile --tag iganarix/cld-gcloud
           # docker push iganarix/cld-gcloud
