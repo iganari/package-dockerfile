@@ -24,6 +24,8 @@ jobs:
           # docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           ls -la
           pwd
+          ls -la ../
+          ls -la ../../
           # docker build 50_cloud/gcloud/Dockerfile --tag iganarix/cld-gcloud
           # docker push iganarix/cld-gcloud
 
