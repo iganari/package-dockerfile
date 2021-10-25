@@ -9,14 +9,14 @@ on:
 
 jobs:
   step:
-    name: update iganarix/cld-gcloud
+    name: Push Contanier Image
     runs-on: ubuntu-20.04
     steps:
       - name: Check out repository code
         uses: actions/checkout@main
         with:
           ref: ${{ github.ref }}
-      - name: Push Docker Hub
+      - name: Update iganarix/cld-gcloud
         env:
           docker_hub_user:   ${{ secrets.DOCKER_HUB_USER }}
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
@@ -24,4 +24,11 @@ jobs:
           docker build 50_cloud/gcloud --tag iganarix/cld-gcloud
           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           docker push iganarix/cld-gcloud
-
+      - name: Update iganarix/os-alpine
+        env:
+          docker_hub_user:   ${{ secrets.DOCKER_HUB_USER }}
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+        run: | 
+          docker build 30_os/alpine --tag iganarix/os-alpine
+          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+          docker push iganarix/os-alpine
