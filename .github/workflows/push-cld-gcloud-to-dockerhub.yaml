@@ -17,12 +17,15 @@ jobs:
     steps:
       - name: push
         shell: bash
-        # env:
-        #   iganari_dev_user: ${{ secrets.IGANARI_DEV_USER }}
-        #   iganari_dev_email: ${{ secrets.IGANARI_DEV_EMAIL }}
-        #   iganari_dev_token: ${{ secrets.IGANARI_DEV_TOKEN }}
+        env:
+          docker_hub_user:   ${{ secrets.DOCKER_HUB_USER }}
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD}}
         run: |
-          docker version
+
+          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+          docker build 50_cloud/gcloud/Dockerfile --tag iganarix/cld-gcloud
+          docker push iganarix/cld-gcloud
+
           # cd /tmp
           # echo "Git Clone ${GITHUB_REPOSITORY}"
           # git clone https://${iganari_dev_token}@github.com/${GITHUB_REPOSITORY}.git
