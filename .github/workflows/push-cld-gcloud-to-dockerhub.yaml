@@ -20,9 +20,9 @@ jobs:
         env:
           docker_hub_user:   ${{ secrets.DOCKER_HUB_USER }}
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD}}
-        run: |
-          pwd
+        run: | 
           ls ${{ github.workspace }}
+          pwd
 
           # docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           # docker build 50_cloud/gcloud/Dockerfile --tag iganarix/cld-gcloud
