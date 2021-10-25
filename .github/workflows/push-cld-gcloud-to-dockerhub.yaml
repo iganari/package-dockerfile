@@ -1,5 +1,3 @@
-# ref: https://gist.github.com/iganari/0b8bbd80c3bcf64581ba786217059c6d
-
 name: 'push-cld-gcloud'
 
 on:
@@ -8,34 +6,22 @@ on:
       - main
       - 'feature/add-dockerhub-to-githubactions'
       # - 'feature/hogehoge'
-      # - develop
 
 jobs:
   step:
-    name: Update readme branch
+    name: Update Contanier Image on Docker Hub
     runs-on: ubuntu-20.04
     steps:
       - name: Check out repository code
         uses: actions/checkout@main
         with:
           ref: ${{ github.ref }}
-      - name: push
-        # shell: bash
+      - name: Push Docker Hub
         env:
           docker_hub_user:   ${{ secrets.DOCKER_HUB_USER }}
-          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD}}
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: | 
-          ls ${{ github.workspace }}
-          pwd
           docker build 50_cloud/gcloud --tag iganarix/cld-gcloud
           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           docker push iganarix/cld-gcloud
-          # cd /tmp
-          # echo "Git Clone ${GITHUB_REPOSITORY}"
-          # git clone https://${iganari_dev_token}@github.com/${GITHUB_REPOSITORY}.git
-          # cd $(echo ${GITHUB_REPOSITORY} | awk -F\/ '{print $2}')
-          # git config user.name "${iganari_dev_user}"
-          # git config user.email "${iganari_dev_email}"
-          # git checkout modify-readme-only
-          # git pull origin $(echo ${GITHUB_REF} | sed 's/refs\/heads\///g') --no-edit
-          # git push origin modify-readme-only
+
