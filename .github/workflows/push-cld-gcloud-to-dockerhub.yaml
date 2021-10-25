@@ -22,14 +22,11 @@ jobs:
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD}}
         run: |
           # docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
-          ls -la
           pwd
-          ls -la ../
-          ls -la ../../
           ls ${{ github.workspace }}
+
           # docker build 50_cloud/gcloud/Dockerfile --tag iganarix/cld-gcloud
           # docker push iganarix/cld-gcloud
-
           # cd /tmp
           # echo "Git Clone ${GITHUB_REPOSITORY}"
           # git clone https://${iganari_dev_token}@github.com/${GITHUB_REPOSITORY}.git
