@@ -26,6 +26,7 @@ jobs:
           pwd
           ls -la ../
           ls -la ../../
+          ls ${{ github.workspace }}
           # docker build 50_cloud/gcloud/Dockerfile --tag iganarix/cld-gcloud
           # docker push iganarix/cld-gcloud
 
