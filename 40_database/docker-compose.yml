@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  postgresql:
+    # build: ./postgresql8-4/
+    image: postgres:8.4.22              # https://hub.docker.com/_/postgres
+    container_name: postgresql
+    tty: true
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 0123456789     # user: postgres
+  adminer:
+    image: adminer:4.8.1-standalone     # https://hub.docker.com/_/adminer
+    restart: always
+    ports:
+      - 8080:8080
+
