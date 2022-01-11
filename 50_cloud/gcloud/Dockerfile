@@ -27,5 +27,5 @@ RUN curl -L https://storage.googleapis.com/kubernetes-release/release/${_KUBECTL
          -o /usr/local/bin/kubectl &&\
     chmod 0755 /usr/local/bin/kubectl
 
-RUN gcloud components install beta -q &&\
-    gcloud components update -q
+RUN gcloud components update --quiet && \
+    gcloud components install beta --quiet
