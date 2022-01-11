@@ -18,7 +18,9 @@ RUN apt install -y \
       openssh-client \
       curl \
       vim \
-      tzdata
+      tzdata && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 ### Setting Japan locale
 RUN echo 'LANG="en_US.UTF-8"' > /etc/default/locale
