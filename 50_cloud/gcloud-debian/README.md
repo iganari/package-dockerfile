@@ -1,4 +1,4 @@
-# [WIP] gcloud ubuntu
+# gcloud debian
 
 ## Command
 
