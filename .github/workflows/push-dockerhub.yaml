@@ -23,6 +23,14 @@ jobs:
           docker build 50_cloud/gcloud --tag iganarix/cld-gcloud
           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           docker push iganarix/cld-gcloud
+      - name: Update iganarix/cld-gcloud-debian
+        env:
+          docker_hub_user:   iganarix
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+        run: | 
+          docker build 50_cloud/gcloud --tag iganarix/cld-gcloud-debian
+          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+          docker push iganarix/cld-gcloud-debian
       - name: Update iganarix/os-alpine
         env:
           docker_hub_user:   iganarix
