@@ -50,10 +50,14 @@ jobs:
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
           docker images
+          echo 'debug 1'
           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
-          docker push iganarix/cld-gcloud:latest
+          echo 'debug 2'
           docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
+          echo 'debug 3'
           docker push iganarix/cld-gcloud:${_gcloud_version}-debian
+          echo 'debug 4'
+          docker push iganarix/cld-gcloud:latest
 
       - name: Update iganarix/os-alpine
         timeout-minutes: 20 # step個別
