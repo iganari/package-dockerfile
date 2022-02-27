@@ -8,7 +8,7 @@ on:
       # - 'feature/hogehoge'
 
 jobs:
-  step:
+  step1:
     name: Push Contanier Image
     runs-on: ubuntu-20.04
     timeout-minutes: 60 # job全体
@@ -77,6 +77,7 @@ jobs:
       - name: Delete stored data
         run: rm -f /home/runner/.docker/config.json
   step2:
+    needs: step1
     name: Push Contanier Image
     runs-on: ubuntu-20.04
     timeout-minutes: 60 # job全体
