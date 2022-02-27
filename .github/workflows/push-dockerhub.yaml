@@ -4,16 +4,14 @@ on:
   push:
     branches:
       - main
-      # - 'feature/modidy-github-actions'
       # - 'feature/hogehoge'
 
 jobs:
-  step:
-    name: Push Contanier Image
+  job0:
+    name: Build iganarix/cld-gcloud
     runs-on: ubuntu-20.04
     timeout-minutes: 60 # job全体
     steps:
-
       - name: Check out repository code
         uses: actions/checkout@main
         with:
@@ -24,39 +22,84 @@ jobs:
           TZ: 'Asia/Tokyo' # タイムゾーン指定
         run: echo "CURRENT_DATETIME=$(date +'%Y-%m%d-%H%M')" >> $GITHUB_ENV
 
-
-      - name: Update iganarix/cld-gcloud
+      - name: Build Container Image
         timeout-minutes: 20 # step個別
         env:
           docker_hub_user: iganarix
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
-        run: | 
-          docker build 50_cloud/gcloud --tag iganarix/cld-gcloud:latest --tag iganarix/cld-gcloud:${{ env.CURRENT_DATETIME }}
+        run: |
+          cd 50_cloud/gcloud
+          export _gcloud_version=$(cat _gcloud_version | head -n 1)
+          sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-alpine.tpl > Dockerfile-alpine
+          sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-debian.tpl > Dockerfile-debian
+          docker build . --file Dockerfile-alpine --tag iganarix/cld-gcloud:${_gcloud_version}-alpine --tag iganarix/cld-gcloud:latest
+          docker build . --file Dockerfile-debian --tag iganarix/cld-gcloud:${_gcloud_version}-debian
+
+      - name: Upload Container Image
+        timeout-minutes: 20 # step個別
+        env:
+          docker_hub_user: iganarix
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+        run: |
+          cd 50_cloud/gcloud
+          export _gcloud_version=$(cat _gcloud_version | head -n 1)
           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+          docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
+          docker push iganarix/cld-gcloud:${_gcloud_version}-debian
           docker push iganarix/cld-gcloud:latest
-          docker push iganarix/cld-gcloud:${{ env.CURRENT_DATETIME }}
-
-      - name: Update iganarix/cld-gcloud-debian
-        timeout-minutes: 20 # step個別
-        env:
-          docker_hub_user: iganarix
-          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
-        run: | 
-          docker build 50_cloud/gcloud-debian --tag iganarix/cld-gcloud-debian:latest --tag iganarix/cld-gcloud-debian:${{ env.CURRENT_DATETIME }}
-          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
-          docker push iganarix/cld-gcloud-debian:latest
-          docker push iganarix/cld-gcloud-debian:${{ env.CURRENT_DATETIME }}
-
-      - name: Update iganarix/os-alpine
-        timeout-minutes: 20 # step個別
-        env:
-          docker_hub_user: iganarix
-          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
-        run: | 
-          docker build 30_os/alpine --tag iganarix/os-alpine:latest --tag iganarix/os-alpine:${{ env.CURRENT_DATETIME }}
-          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
-          docker push iganarix/os-alpine:latest
-          docker push iganarix/os-alpine:${{ env.CURRENT_DATETIME }}
 
       - name: Delete stored data
         run: rm -f /home/runner/.docker/config.json
+
+  job1:
+    name: Build iganarix/os-alpine
+    runs-on: ubuntu-20.04
+    timeout-minutes: 60 # job全体
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@main
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set Tags date
+        env:
+          TZ: 'Asia/Tokyo' # タイムゾーン指定
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m%d-%H%M')" >> $GITHUB_ENV   # echo ${{ env.CURRENT_DATETIME }}
+
+      - name: Build Container Image
+        timeout-minutes: 20 # step個別
+        run: |
+          cd 30_os/alpine
+          export _os_version=$(cat _os_version | head -n 1)
+          sed -e "s/_OS_VERSION/${_os_version}/g" Dockerfile.tpl > Dockerfile
+          docker build . --file Dockerfile --tag iganarix/os-alpine:latest --tag iganarix/os-alpine:${_os_version}
+
+      - name: Upload Container Image
+        timeout-minutes: 20 # step個別
+        env:
+          docker_hub_user: iganarix
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+        run: |
+          cd 30_os/alpine
+          export _os_version=$(cat _os_version | head -n 1)
+          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+          docker push iganarix/os-alpine:latest
+          docker push iganarix/os-alpine:${_os_version}
+
+      - name: Delete stored data
+        run: rm -f /home/runner/.docker/config.json
+
+#   job2:
+#     needs: [job0, job1]
+#     name: Push Contanier Image
+#     runs-on: ubuntu-20.04
+#     timeout-minutes: 60 # job全体
+#     steps:
+#       - name: Check out repository code
+#         uses: actions/checkout@main
+#         with:
+#           ref: ${{ github.ref }}
+#       - name: Upload iganarix/cld-gcloud debug
+#         timeout-minutes: 20 # step個別
+#         run: |
+#           docker images
