@@ -31,8 +31,12 @@ jobs:
         #   docker_hub_user: iganarix
         #   docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
-          export _gcloud_version='374.0.0'
           cd 50_cloud/gcloud
+          export _gcloud_version=$(cat _gcloud_version | head -n 1)
+
+          sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-alpine.tpl > Dockerfile-alpine
+          sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-debian.tpl > Dockerfile-debian
+
           docker build . --file Dockerfile-alpine --tag iganarix/cld-gcloud:${_gcloud_version}-alpine --tag iganarix/cld-gcloud:latest
           docker build . --file Dockerfile-debian --tag iganarix/cld-gcloud:${_gcloud_version}-debian
           # docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
@@ -45,9 +49,10 @@ jobs:
           docker_hub_user: iganarix
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
-          docker push iganarix/cld-gcloud:latest
-          docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
-          docker push iganarix/cld-gcloud:${_gcloud_version}-debian
+          docker images
+          # docker push iganarix/cld-gcloud:latest
+          # docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
+          # docker push iganarix/cld-gcloud:${_gcloud_version}-debian
 
       - name: Update iganarix/os-alpine
         timeout-minutes: 20 # step個別

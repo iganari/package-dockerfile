@@ -2,14 +2,20 @@
 
 ## Version
 
-gcloud Version `374.0.0`
+gcloud Version -> [_gcloud_version](./_gcloud_version)
 
 ## Command
 
 + Create Docker image
 
 ```
-docker build . --tag my_$(pwd | awk -F\/ '{print $NF}')
+export _gcloud_version=$(cat _gcloud_version | head -n 1)
+
+sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-alpine.tpl > Dockerfile-alpine
+sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-debian.tpl > Dockerfile-debian
+
+docker build . --file Dockerfile-alpine --tag iganarix/cld-gcloud:${_gcloud_version}-alpine
+docker build . --file Dockerfile-debian --tag iganarix/cld-gcloud:${_gcloud_version}-debian
 ```
 
 + Run Google CLI using Docker images
