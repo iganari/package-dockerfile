@@ -1,4 +1,4 @@
-ARG _TAG='361.0.0-alpine'
+ARG _TAG='_GCLOUD_VERSION-alpine'
 FROM google/cloud-sdk:${_TAG}
 # https://hub.docker.com/r/google/cloud-sdk/tags?page=1&name=-alpine
 
@@ -27,5 +27,5 @@ RUN curl -L https://storage.googleapis.com/kubernetes-release/release/${_KUBECTL
          -o /usr/local/bin/kubectl &&\
     chmod 0755 /usr/local/bin/kubectl
 
-RUN gcloud components install beta -q &&\
-    gcloud components update -q
+RUN gcloud components update --quiet && \
+    gcloud components install beta --quiet

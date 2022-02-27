@@ -1,8 +1,6 @@
-ARG _TAG='20.04'
-FROM ubuntu:${_TAG}
-# https://hub.docker.com/_/ubuntu/
-
-LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/ubuntu-20.04
+ARG _TAG='_GCLOUD_VERSION-slim'
+FROM google/cloud-sdk:${_TAG}
+# https://hub.docker.com/r/google/cloud-sdk/tags?page=1&name=-slim
 
 ENV DEBIAN_FRONTEND=nointeractive
 
@@ -27,3 +25,5 @@ RUN echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 RUN rm -rfv /etc/localtime &&\
     ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime &&\
     dpkg-reconfigure -f noninteractive tzdata
+
+RUN pip3 install google-cloud-build
