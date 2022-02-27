@@ -95,7 +95,7 @@ jobs:
       - name: Delete stored data
         run: rm -f /home/runner/.docker/config.json
   job2:
-    needs: [job1, job2]
+    needs: [job0, job1]
     name: Push Contanier Image
     runs-on: ubuntu-20.04
     timeout-minutes: 60 # job全体
