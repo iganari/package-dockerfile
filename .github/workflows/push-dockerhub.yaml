@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-20.04
     timeout-minutes: 60 # job全体
     steps:
-
       - name: Check out repository code
         uses: actions/checkout@main
         with:
@@ -30,13 +29,10 @@ jobs:
           docker_hub_user: iganarix
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
-
           cd 50_cloud/gcloud
           export _gcloud_version=$(cat _gcloud_version | head -n 1)
-
           sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-alpine.tpl > Dockerfile-alpine
           sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-debian.tpl > Dockerfile-debian
-
           docker build . --file Dockerfile-alpine --tag iganarix/cld-gcloud:${_gcloud_version}-alpine --tag iganarix/cld-gcloud:latest
           docker build . --file Dockerfile-debian --tag iganarix/cld-gcloud:${_gcloud_version}-debian
 
@@ -46,12 +42,8 @@ jobs:
           docker_hub_user: iganarix
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
-          ls
-          docker images
-
           cd 50_cloud/gcloud
           export _gcloud_version=$(cat _gcloud_version | head -n 1)
-
           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
           docker push iganarix/cld-gcloud:${_gcloud_version}-debian
@@ -82,8 +74,8 @@ jobs:
           docker_hub_user: iganarix
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
-          ls
-          docker build 30_os/alpine --tag iganarix/os-alpine:latest --tag iganarix/os-alpine:${{ env.CURRENT_DATETIME }}
+          cd 30_os/alpine
+          docker build . --tag iganarix/os-alpine:latest --tag iganarix/os-alpine:${{ env.CURRENT_DATETIME }}
           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           docker push iganarix/os-alpine:latest
           docker push iganarix/os-alpine:${{ env.CURRENT_DATETIME }}
