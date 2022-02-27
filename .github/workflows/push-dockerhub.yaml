@@ -9,7 +9,7 @@ on:
 
 jobs:
   job0:
-    name: Build Container Image iganarix/cld-gcloud
+    name: Build iganarix/cld-gcloud
     runs-on: ubuntu-20.04
     timeout-minutes: 60 # job全体
     steps:
@@ -26,9 +26,9 @@ jobs:
 
       - name: Build Container Image
         timeout-minutes: 20 # step個別
-        # env:
-        #   docker_hub_user: iganarix
-        #   docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+        env:
+          docker_hub_user: iganarix
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
           ls
           cd 50_cloud/gcloud
@@ -43,29 +43,28 @@ jobs:
           # docker push iganarix/cld-gcloud:latest
           # docker push iganarix/cld-gcloud:${{ env.CURRENT_DATETIME }}
 
-#       - name: Upload iganarix/cld-gcloud
-#         timeout-minutes: 20 # step個別
-#         env:
-#           docker_hub_user: iganarix
-#           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
-#         run: |
-#           ls
-#           docker images
-# 
-#           cd 50_cloud/gcloud
-#           export _gcloud_version=$(cat _gcloud_version | head -n 1)
-# 
-#           echo 'debug 1'
-#           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
-#           echo 'debug 2'
-#           docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
-#           echo 'debug 3'
-#           docker push iganarix/cld-gcloud:${_gcloud_version}-debian
-#           echo 'debug 4'
-#           docker push iganarix/cld-gcloud:latest
+      - name: Upload Container Image
+        timeout-minutes: 20 # step個別
+        env:
+          docker_hub_user: iganarix
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+        run: |
+          ls
+          docker images
+
+          cd 50_cloud/gcloud
+          export _gcloud_version=$(cat _gcloud_version | head -n 1)
+
+          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+          docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
+          docker push iganarix/cld-gcloud:${_gcloud_version}-debian
+          docker push iganarix/cld-gcloud:latest
+
+      - name: Delete stored data
+        run: rm -f /home/runner/.docker/config.json
 
   job1:
-    name: Build Container Image iganarix/os-alpine
+    name: Build iganarix/os-alpine
     runs-on: ubuntu-20.04
     timeout-minutes: 60 # job全体
     steps:
@@ -94,6 +93,7 @@ jobs:
 
       - name: Delete stored data
         run: rm -f /home/runner/.docker/config.json
+
   job2:
     needs: [job0, job1]
     name: Push Contanier Image
