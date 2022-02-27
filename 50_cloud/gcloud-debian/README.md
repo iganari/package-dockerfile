@@ -1,4 +1,4 @@
-# [WIP] gcloud ubuntu
+# gcloud debian
 
 ## Command
 
@@ -22,4 +22,4 @@ docker run -it --entrypoint /bin/bash my_$(pwd | awk -F\/ '{print $NF}')
 
 ## Docker Hub
 
-+ WIP
+https://hub.docker.com/repository/docker/iganarix/cld-gcloud-debian
