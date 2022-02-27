@@ -50,6 +50,10 @@ jobs:
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
           docker images
+
+          cd 50_cloud/gcloud
+          export _gcloud_version=$(cat _gcloud_version | head -n 1)
+
           echo 'debug 1'
           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           echo 'debug 2'
