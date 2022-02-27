@@ -1,4 +1,4 @@
-ARG _TAG='374.0.0-slim'
+ARG _TAG='_GCLOUD_VERSION-slim'
 FROM google/cloud-sdk:${_TAG}
 # https://hub.docker.com/r/google/cloud-sdk/tags?page=1&name=-slim
 
