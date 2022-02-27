@@ -30,6 +30,15 @@ jobs:
     runs-on: ubuntu-20.04
     timeout-minutes: 60 # job全体
     steps:
+      - name: Check
+        timeout-minutes: 20 # step個別
+        # env:
+        #   docker_hub_user: iganarix
+        #   docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+        run: |
+          ls -la
+          pwd
+          echo ${{ env.CURRENT_DATETIME }}
       - name: Build iganarix/cld-gcloud
         timeout-minutes: 20 # step個別
         # env:
