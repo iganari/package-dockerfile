@@ -43,26 +43,42 @@ jobs:
           # docker push iganarix/cld-gcloud:latest
           # docker push iganarix/cld-gcloud:${{ env.CURRENT_DATETIME }}
 
-      - name: Upload iganarix/cld-gcloud
-        timeout-minutes: 20 # step個別
+#       - name: Upload iganarix/cld-gcloud
+#         timeout-minutes: 20 # step個別
+#         env:
+#           docker_hub_user: iganarix
+#           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+#         run: |
+#           ls
+#           docker images
+# 
+#           cd 50_cloud/gcloud
+#           export _gcloud_version=$(cat _gcloud_version | head -n 1)
+# 
+#           echo 'debug 1'
+#           docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+#           echo 'debug 2'
+#           docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
+#           echo 'debug 3'
+#           docker push iganarix/cld-gcloud:${_gcloud_version}-debian
+#           echo 'debug 4'
+#           docker push iganarix/cld-gcloud:latest
+
+  job1:
+    name: Build Container Image iganarix/os-alpine
+    runs-on: ubuntu-20.04
+    timeout-minutes: 60 # job全体
+    steps:
+
+      - name: Check out repository code
+        uses: actions/checkout@main
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set Tags date
         env:
-          docker_hub_user: iganarix
-          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
-        run: |
-          ls
-          docker images
-
-          cd 50_cloud/gcloud
-          export _gcloud_version=$(cat _gcloud_version | head -n 1)
-
-          echo 'debug 1'
-          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
-          echo 'debug 2'
-          docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
-          echo 'debug 3'
-          docker push iganarix/cld-gcloud:${_gcloud_version}-debian
-          echo 'debug 4'
-          docker push iganarix/cld-gcloud:latest
+          TZ: 'Asia/Tokyo' # タイムゾーン指定
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m%d-%H%M')" >> $GITHUB_ENV
 
       - name: Update iganarix/os-alpine
         timeout-minutes: 20 # step個別
@@ -79,7 +95,7 @@ jobs:
       - name: Delete stored data
         run: rm -f /home/runner/.docker/config.json
   job2:
-    needs: job1
+    needs: [job1, job2]
     name: Push Contanier Image
     runs-on: ubuntu-20.04
     timeout-minutes: 60 # job全体
