@@ -76,3 +76,16 @@ jobs:
 
       - name: Delete stored data
         run: rm -f /home/runner/.docker/config.json
+  step2:
+    name: Push Contanier Image
+    runs-on: ubuntu-20.04
+    timeout-minutes: 60 # job全体
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@main
+        with:
+          ref: ${{ github.ref }}
+      - name: Upload iganarix/cld-gcloud debug
+        timeout-minutes: 20 # step個別
+        run: |
+          docker images
