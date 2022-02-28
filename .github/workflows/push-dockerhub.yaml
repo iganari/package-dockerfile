@@ -115,6 +115,7 @@ jobs:
           sed -e "s/_OS_VERSION/${_os_version}/g" Dockerfile.tpl > Dockerfile-${_os_version}
           docker build . --file Dockerfile-${_os_version} --tag iganarix/os-ubuntu:${_os_version}
           done
+          docker images
 
       # - name: Upload Container Image
       #   timeout-minutes: 20 # step個別
