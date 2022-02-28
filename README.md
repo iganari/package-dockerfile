@@ -4,7 +4,7 @@
 
 ## Workflow Status of GitHub Actions
 
-+ [![update-readme-branch](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml/badge.svg?branch=main)](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml)
++ [![Update README Branch](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml/badge.svg?branch=main)](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml)
 + [![Update Contanier Image on Docker Hub](https://github.com/iganari/package-dockerfile/actions/workflows/push-dockerhub.yaml/badge.svg?branch=main)](https://github.com/iganari/package-dockerfile/actions/workflows/push-dockerhub.yaml)
 
 
