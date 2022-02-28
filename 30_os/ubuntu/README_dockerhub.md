@@ -1,11 +1,29 @@
-# What is os-ubuntu-20.04 ?
+# Quick reference
 
-+ WIP
+This Repository is personally maintained :)
 
-# How to use this image
++ Maintained by [iganari](https://github.com/iganari)
++ Base Images is [ubuntu](https://hub.docker.com/_/ubuntu/) ( Special Thanks !! :D )
 
-+ WIP
+# Supported tags
+
+```
+18.04
+20.04
+21.10
+22.04
+```
+
+---> [_os_version](https://github.com/iganari/package-dockerfile/tree/main/30_os/ubuntu/_os_version)
+
+# How to Use
+
++ Latest Version
+
+```
+docker pull iganarix/os-ubuntu:latest
+```
 
 # GitHub Source
 
-+ https://github.com/iganari/package-dockerfile/tree/master/30_os/ubuntu-20.04
++ https://github.com/iganari/package-dockerfile/tree/main/30_os/ubuntu
