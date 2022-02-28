@@ -1,8 +1,6 @@
-ARG _TAG='20.04'
+ARG _TAG='_OS_VERSION'
 FROM ubuntu:${_TAG}
 # https://hub.docker.com/_/ubuntu/
-
-LABEL org.label-schema.vcs-url=https://github.com/iganari/package-dockerfile/tree/master/ubuntu-20.04
 
 ENV DEBIAN_FRONTEND=nointeractive
 

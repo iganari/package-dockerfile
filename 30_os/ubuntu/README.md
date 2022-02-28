@@ -1,4 +1,4 @@
-# Ubuntu 16.04
+# Ubuntu 20.04
 
 
 ## Command
@@ -35,4 +35,4 @@ docker run -it --rm --entrypoint /bin/sh --name my_$(pwd | awk -F\/ '{print $NF}
 
 ## Docker Hub
 
-+ Does Not created because of the old OS number :no_good:
++ https://hub.docker.com/r/iganarix/os-ubuntu

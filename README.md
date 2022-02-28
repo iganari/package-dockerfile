@@ -4,7 +4,7 @@
 
 ## Workflow Status of GitHub Actions
 
-+ [![update-readme-branch](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml/badge.svg?branch=main)](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml)
++ [![Update README Branch](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml/badge.svg?branch=main)](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml)
 + [![Update Contanier Image on Docker Hub](https://github.com/iganari/package-dockerfile/actions/workflows/push-dockerhub.yaml/badge.svg?branch=main)](https://github.com/iganari/package-dockerfile/actions/workflows/push-dockerhub.yaml)
 
 
@@ -21,7 +21,7 @@ Variation | Docker Hub's Link | [dockeri.co](https://dockeri.co)
 :- | :- | :-
 alpine | [iganarix/os-alpine](https://hub.docker.com/r/iganarix/os-alpine) | ![dockeri.co](https://dockeri.co/image/iganarix/os-alpine)
 os-centos-7 | [iganarix/os-centos-7](https://hub.docker.com/r/iganarix/os-centos-7) | ![dockeri.co](https://dockeri.co/image/iganarix/os-centos-7)
-ubuntu-18.04 | [iganarix/os-ubuntu-18.04](https://hub.docker.com/r/iganarix/os-ubuntu-18.04) | ![dockeri.co](https://dockeri.co/image/iganarix/os-ubuntu-18.04)
+ubuntu | [iganarix/os-ubuntu](https://hub.docker.com/r/iganarix/os-ubuntu) | ![dockeri.co](https://dockeri.co/image/iganarix/os-ubuntu)
 
 ## 50_cloud
 
