@@ -41,7 +41,7 @@ README ![](https://github.com/iganari/package-dockerfile/workflows/update-readme
 
 ## 50_cloud
 
-種類 | Docker Hub's Link | microbadger
+種類 | Docker Hub's Link | [dockeri.co](https://dockeri.co)
 :- | :- | :-
 aws-cli | [iganarix/cld-aws-cli](https://hub.docker.com/r/iganarix/cld-aws-cli) | ![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)
 aws-cli_terraform | TBD | TBD
