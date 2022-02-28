@@ -1,6 +1,6 @@
 # ref: https://gist.github.com/iganari/0b8bbd80c3bcf64581ba786217059c6d
 
-name: 'update-readme-branch'
+name: 'Update README Branch'
 
 on:
   push:
