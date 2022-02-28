@@ -41,20 +41,10 @@ README ![](https://github.com/iganari/package-dockerfile/workflows/update-readme
 
 ## 50_cloud
 
-+ aws-cli
-
-![](https://images.microbadger.com/badges/image/iganarix/cld-aws-cli.svg)
-
-![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)
-
-+ azure-cli
-
-WIP
-
-+ gcloud
-
-![](https://images.microbadger.com/badges/image/iganarix/cld-gcloud.svg)
-
-![dockeri.co](https://dockeri.co/image/iganarix/cld-gcloud)
-
+種類 | Docker Hub's Link | microbadger
+:- | :- | :-
+aws-cli | [iganarix/cld-aws-cli](https://hub.docker.com/r/iganarix/cld-aws-cli) | ![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)
+aws-cli_terraform | TBD | TBD
+azure-cli | TBD | TBD
+gcloud | [iganarix/cld-gcloud](https://hub.docker.com/r/iganarix/cld-gcloud) | ![dockeri.co](https://dockeri.co/image/iganarix/cld-gcloud)
 
