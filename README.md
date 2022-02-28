@@ -22,9 +22,9 @@ README ![](https://github.com/iganari/package-dockerfile/workflows/update-readme
 
 Variation | Docker Hub's Link | [dockeri.co](https://dockeri.co)
 :- | :- | :-
-alpine | [iganarix/os-alpine](https://hub.docker.com/r/iganarix/os-alpine)
-os-centos-7 | [iganarix/os-centos-7](https://hub.docker.com/r/iganarix/os-centos-7)
-ubuntu-18.04 | [iganarix/os-ubuntu-18.04](https://hub.docker.com/r/iganarix/os-ubuntu-18.04)
+alpine | [iganarix/os-alpine](https://hub.docker.com/r/iganarix/os-alpine) | ![dockeri.co](https://dockeri.co/image/iganarix/os-alpine)
+os-centos-7 | [iganarix/os-centos-7](https://hub.docker.com/r/iganarix/os-centos-7) | ![dockeri.co](https://dockeri.co/image/iganarix/os-centos-7)
+ubuntu-18.04 | [iganarix/os-ubuntu-18.04](https://hub.docker.com/r/iganarix/os-ubuntu-18.04) | ![dockeri.co](https://dockeri.co/image/iganarix/os-ubuntu-18.04)
 
 ## 50_cloud
 
