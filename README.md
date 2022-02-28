@@ -20,28 +20,15 @@ README ![](https://github.com/iganari/package-dockerfile/workflows/update-readme
 
 ## 30_os
 
-+ alpine
-
-![](https://images.microbadger.com/badges/image/iganarix/os-alpine.svg)
-
-![dockeri.co](https://dockeri.co/image/iganarix/os-alpine)
-
-+ centos-7
-
-![](https://images.microbadger.com/badges/image/iganarix/os-centos-7.svg)
-
-![dockeri.co](https://dockeri.co/image/iganarix/os-centos-7)
-
-+ ubuntu-18.04
-
-![](https://images.microbadger.com/badges/image/iganarix/os-ubuntu-18.04.svg)
-
-![dockeri.co](https://dockeri.co/image/iganarix/os-ubuntu-18.04)
-
+Variation | Docker Hub's Link | [dockeri.co](https://dockeri.co)
+:- | :- | :-
+alpine | [iganarix/os-alpine](https://hub.docker.com/r/iganarix/os-alpine)
+os-centos-7 | [iganarix/os-centos-7](https://hub.docker.com/r/iganarix/os-centos-7)
+ubuntu-18.04 | [iganarix/os-ubuntu-18.04](https://hub.docker.com/r/iganarix/os-ubuntu-18.04)
 
 ## 50_cloud
 
-種類 | Docker Hub's Link | [dockeri.co](https://dockeri.co)
+Variation | Docker Hub's Link | [dockeri.co](https://dockeri.co)
 :- | :- | :-
 aws-cli | [iganarix/cld-aws-cli](https://hub.docker.com/r/iganarix/cld-aws-cli) | ![dockeri.co](https://dockeri.co/image/iganarix/cld-aws-cli)
 aws-cli_terraform | TBD | TBD
