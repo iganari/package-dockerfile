@@ -42,9 +42,9 @@ jobs:
           docker_hub_user: iganarix
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
+          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           cd 50_cloud/gcloud
           export _gcloud_version=$(cat _gcloud_version | head -n 1)
-          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
           docker push iganarix/cld-gcloud:${_gcloud_version}-debian
           docker push iganarix/cld-gcloud:latest
@@ -81,9 +81,9 @@ jobs:
           docker_hub_user: iganarix
           docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
         run: |
+          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           cd 30_os/alpine
           export _os_version=$(cat _os_version | head -n 1)
-          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
           docker push iganarix/os-alpine:latest
           docker push iganarix/os-alpine:${_os_version}
 
@@ -110,27 +110,29 @@ jobs:
         run: |
           cd 30_os/ubuntu
           for i in `cat _os_version`
-          do
-          export _os_version=${i}
-          sed -e "s/_OS_VERSION/${_os_version}/g" Dockerfile.tpl > Dockerfile-${_os_version}
-          docker build . --file Dockerfile-${_os_version} --tag iganarix/os-ubuntu:${_os_version}
-          done
+            do
+              export _os_version=${i}
+              sed -e "s/_OS_VERSION/${_os_version}/g" Dockerfile.tpl > Dockerfile-${_os_version}
+              docker build . --file Dockerfile-${_os_version} --tag iganarix/os-ubuntu:${_os_version}
+            done
           docker images
 
-      # - name: Upload Container Image
-      #   timeout-minutes: 20 # step個別
-      #   env:
-      #     docker_hub_user: iganarix
-      #     docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
-      #   run: |
-      #     cd 30_os/ubuntu
-      #     export _os_version=$(cat _os_version | head -n 1)
-      #     docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
-      #     docker push iganarix/os-ubuntu:latest
-      #     docker push iganarix/os-ubuntu:${_os_version}
+      - name: Upload Container Image
+        timeout-minutes: 20 # step個別
+        env:
+          docker_hub_user: iganarix
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+        run: |
+          docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+          cd 30_os/ubuntu
+          for i in `cat _os_version`
+            do
+              export _os_version=${i}
+              docker push iganarix/os-ubuntu:${_os_version}
+            done
 
-      # - name: Delete stored data
-      #   run: rm -f /home/runner/.docker/config.json
+      - name: Delete stored data
+        run: rm -f /home/runner/.docker/config.json
 
 #   job2:
 #     needs: [job0, job1]
