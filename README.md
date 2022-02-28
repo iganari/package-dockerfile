@@ -2,7 +2,11 @@
 
 ![](./icon.png)
 
-README ![](https://github.com/iganari/package-dockerfile/workflows/update-readme-branch/badge.svg)
+## Workflow Status of GitHub Actions
+
++ [![update-readme-branch](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml/badge.svg?branch=main)](https://github.com/iganari/package-dockerfile/actions/workflows/update-readme-branch.yaml)
++ [![Update Contanier Image on Docker Hub](https://github.com/iganari/package-dockerfile/actions/workflows/push-dockerhub.yaml/badge.svg?branch=main)](https://github.com/iganari/package-dockerfile/actions/workflows/push-dockerhub.yaml)
+
 
 ## 10_lang
 
