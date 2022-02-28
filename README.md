@@ -6,17 +6,10 @@ README ![](https://github.com/iganari/package-dockerfile/workflows/update-readme
 
 ## 10_lang
 
-+ golang
-
-![](https://images.microbadger.com/badges/image/iganarix/lang-golang.svg)
-
-![dockeri.co](https://dockeri.co/image/iganarix/lang-golang)
-  
-+ python
-
-![](https://images.microbadger.com/badges/image/iganarix/lang-python.svg)
-
-![dockeri.co](https://dockeri.co/image/iganarix/lang-python)
+Variation | Docker Hub's Link | [dockeri.co](https://dockeri.co)
+:- | :- | :-
+lang-golang | [iganarix/lang-golang](https://hub.docker.com/r/iganarix/lang-golang) | ![dockeri.co](https://dockeri.co/image/iganarix/lang-golang)
+lang-python | [iganarix/lang-python](https://hub.docker.com/r/iganarix/lang-python) | ![dockeri.co](https://dockeri.co/image/iganarix/lang-python)
 
 ## 30_os
 
