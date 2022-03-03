@@ -14,6 +14,7 @@ RUN apt install -y \
       python3-minimal \
       python3-pip \
       openssh-client \
+      procps \
       curl \
       vim \
       tzdata && \
