@@ -11,6 +11,7 @@ RUN apt update && \
     apt autoremove -y
 RUN apt install -y \
       --no-install-recommends \
+      software-properties-common \
       python3-minimal \
       python3-pip \
       openssh-client \
