@@ -18,7 +18,7 @@ RUN apt install -y \
       curl \
       vim \
       tzdata && \
-    apt-get clean && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 ### Setting Japan locale
