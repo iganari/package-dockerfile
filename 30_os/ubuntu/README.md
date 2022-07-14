@@ -1,5 +1,8 @@
 # Ubuntu 20.04
 
+## Version
+
+[OS Version](./_os_version)
 
 ## Command
 
