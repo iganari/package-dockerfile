@@ -2,7 +2,7 @@
 
 ## Version
 
-gcloud Version -> [_gcloud_version](./_gcloud_version)
+[gcloud Version](./_gcloud_version)
 
 ## Command
 
