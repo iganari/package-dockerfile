@@ -1,0 +1,137 @@
+name: Update Contanier Image on Docker Hub
+
+on:
+  pull_request:
+    types:
+      - opend
+    branches:
+      - main
+      # - 'feature/hogehoge'
+
+jobs:
+  job0:
+    name: Build iganarix/cld-gcloud
+    runs-on: ubuntu-20.04
+    timeout-minutes: 60 # job全体
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@main
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set Tags date
+        env:
+          TZ: 'Asia/Tokyo' # タイムゾーン指定
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m%d-%H%M')" >> $GITHUB_ENV
+
+      - name: Build Container Image
+        timeout-minutes: 20 # step個別
+        env:
+          docker_hub_user: iganarix
+          docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+        run: |
+          cd 50_cloud/gcloud
+          export _gcloud_version=$(cat _gcloud_version | head -n 1)
+          sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-alpine.tpl > Dockerfile-alpine
+          sed -e "s/_GCLOUD_VERSION/${_gcloud_version}/g" Dockerfile-debian.tpl > Dockerfile-debian
+          docker build . --file Dockerfile-alpine --tag iganarix/cld-gcloud:${_gcloud_version}-alpine --tag iganarix/cld-gcloud:latest
+          docker build . --file Dockerfile-debian --tag iganarix/cld-gcloud:${_gcloud_version}-debian
+
+      # - name: Upload Container Image
+      #   timeout-minutes: 20 # step個別
+      #   env:
+      #     docker_hub_user: iganarix
+      #     docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+      #   run: |
+      #     docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+      #     cd 50_cloud/gcloud
+      #     export _gcloud_version=$(cat _gcloud_version | head -n 1)
+      #     docker push iganarix/cld-gcloud:${_gcloud_version}-alpine
+      #     docker push iganarix/cld-gcloud:${_gcloud_version}-debian
+      #     docker push iganarix/cld-gcloud:latest
+
+      # - name: Delete stored data
+      #   run: rm -f /home/runner/.docker/config.json
+
+  job1:
+    name: Build iganarix/os-alpine
+    runs-on: ubuntu-20.04
+    timeout-minutes: 60 # job全体
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@main
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set Tags date
+        env:
+          TZ: 'Asia/Tokyo' # タイムゾーン指定
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m%d-%H%M')" >> $GITHUB_ENV   # echo ${{ env.CURRENT_DATETIME }}
+
+      - name: Build Container Image
+        timeout-minutes: 20 # step個別
+        run: |
+          cd 30_os/alpine
+          export _os_version=$(cat _os_version | head -n 1)
+          sed -e "s/_OS_VERSION/${_os_version}/g" Dockerfile.tpl > Dockerfile
+          docker build . --file Dockerfile --tag iganarix/os-alpine:latest --tag iganarix/os-alpine:${_os_version}
+
+      # - name: Upload Container Image
+      #   timeout-minutes: 20 # step個別
+      #   env:
+      #     docker_hub_user: iganarix
+      #     docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+      #   run: |
+      #     docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+      #     cd 30_os/alpine
+      #     export _os_version=$(cat _os_version | head -n 1)
+      #     docker push iganarix/os-alpine:latest
+      #     docker push iganarix/os-alpine:${_os_version}
+
+      # - name: Delete stored data
+      #   run: rm -f /home/runner/.docker/config.json
+
+  job2:
+    name: Build iganarix/os-ubuntu
+    runs-on: ubuntu-20.04
+    timeout-minutes: 60 # job全体
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@main
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set Tags date
+        env:
+          TZ: 'Asia/Tokyo' # タイムゾーン指定
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m%d-%H%M')" >> $GITHUB_ENV   # echo ${{ env.CURRENT_DATETIME }}
+
+      - name: Build Container Image
+        timeout-minutes: 20 # step個別
+        run: |
+          cd 30_os/ubuntu
+          for i in `cat _os_version`
+            do
+              export _os_version=${i}
+              sed -e "s/_OS_VERSION/${_os_version}/g" Dockerfile.tpl > Dockerfile-${_os_version}
+              docker build . --file Dockerfile-${_os_version} --tag iganarix/os-ubuntu:${_os_version}
+            done
+          docker images
+
+      # - name: Upload Container Image
+      #   timeout-minutes: 20 # step個別
+      #   env:
+      #     docker_hub_user: iganarix
+      #     docker_hub_passwd: ${{ secrets.DOCKER_HUB_PASSWD }}
+      #   run: |
+      #     docker login -u ${docker_hub_user} -p ${docker_hub_passwd}
+      #     cd 30_os/ubuntu
+      #     for i in `cat _os_version`
+      #       do
+      #         export _os_version=${i}
+      #         docker push iganarix/os-ubuntu:${_os_version}
+      #       done
+
+      # - name: Delete stored data
+      #   run: rm -f /home/runner/.docker/config.json
+
