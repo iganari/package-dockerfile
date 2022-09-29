@@ -1,4 +1,4 @@
-name: Update Contanier Image on Docker Hub
+name: Update Contanier Image on Github Actions
 
 on:
   pull_request:
