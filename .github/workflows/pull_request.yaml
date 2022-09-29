@@ -4,9 +4,9 @@ on:
   pull_request:
     types:
       - opend
-    branches:
-      - main
-      # - 'feature/hogehoge'
+    # branches:
+    #   - main
+    #   # - 'feature/hogehoge'
 
 jobs:
   job0:
